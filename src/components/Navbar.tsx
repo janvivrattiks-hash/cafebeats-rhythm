@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Our Menu", path: "/menu" },
   { label: "Franchise", path: "/franchise" },
   { label: "Our Stores", path: "/stores" },
+  { label: "Contact Us", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -30,40 +31,50 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 shadow-warm backdrop-blur-md" : "bg-transparent"
+        scrolled ? "bg-black/80 shadow-warm backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <Coffee className="h-8 w-8 text-accent" />
-          <span className="font-display text-2xl font-bold text-foreground">
-            Cafe<span className="text-gradient-gold">Beats</span>
-          </span>
+          <img src="/logo.png" alt="CafeBeats Logo" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`font-body text-sm font-medium tracking-wide transition-colors hover:text-accent ${
-                location.pathname === link.path ? "text-accent" : "text-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.path === "/" 
+              ? location.pathname === "/" 
+              : location.pathname.startsWith(link.path);
+            
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`relative font-body text-sm tracking-wide transition-all duration-300 hover:text-accent ${
+                  isActive ? "text-accent font-bold" : "text-white font-medium"
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1.5 left-0 h-1 w-full rounded-full bg-accent"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
           <Link
             to="/franchise"
-            className="rounded-full bg-gradient-coffee px-6 py-2.5 font-body text-sm font-semibold text-primary-foreground transition-all hover:shadow-gold"
+            className="rounded-full bg-gradient-premium px-6 py-2.5 font-body text-sm font-semibold text-white transition-all hover:shadow-accent"
           >
             Start Franchise
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="text-foreground lg:hidden">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-white lg:hidden">
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -75,23 +86,31 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-card/98 backdrop-blur-lg lg:hidden"
+            className="overflow-hidden bg-black/95 backdrop-blur-lg lg:hidden"
           >
-            <div className="container mx-auto flex flex-col gap-4 px-4 py-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`font-body text-base font-medium transition-colors hover:text-accent ${
-                    location.pathname === link.path ? "text-accent" : "text-foreground"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="container mx-auto flex flex-col gap-4 px-4 py-8">
+              {navLinks.map((link) => {
+                const isActive = link.path === "/" 
+                  ? location.pathname === "/" 
+                  : location.pathname.startsWith(link.path);
+                
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`flex items-center gap-3 font-display text-2xl font-bold transition-all duration-300 ${
+                      isActive 
+                        ? "text-accent pl-6 border-l-4 border-accent bg-accent/5 py-2" 
+                        : "text-white/70 pl-0 py-2 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Link
                 to="/franchise"
-                className="mt-2 inline-block rounded-full bg-gradient-coffee px-6 py-2.5 text-center font-body text-sm font-semibold text-primary-foreground"
+                className="mt-6 inline-block rounded-xl bg-gradient-premium px-6 py-4 text-center font-display text-lg font-bold text-white shadow-lg"
               >
                 Start Franchise
               </Link>

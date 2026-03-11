@@ -19,7 +19,7 @@ const OutletsSection = () => (
       <div className="grid gap-6 md:grid-cols-3">
         {outlets.map((o, i) => (
           <ScrollReveal key={i} delay={i * 0.15}>
-            <div className="group overflow-hidden rounded-2xl border border-border bg-card shadow-warm transition-all hover:-translate-y-1 hover:shadow-gold">
+            <div className="group overflow-hidden rounded-2xl border border-border bg-card shadow-warm transition-all hover:-translate-y-1 hover:shadow-accent">
               <div className="aspect-video overflow-hidden">
                 <img src={o.image} alt={o.city} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
@@ -28,7 +28,7 @@ const OutletsSection = () => (
                 <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
                   <MapPin className="h-3.5 w-3.5" /> {o.address}
                 </p>
-                <Link to="/stores" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-gold-light">
+                <Link to="/stores" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-light">
                   View Details <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>

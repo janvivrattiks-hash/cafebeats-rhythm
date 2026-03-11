@@ -8,7 +8,10 @@ import AboutPage from "./pages/AboutPage.tsx";
 import MenuPage from "./pages/MenuPage.tsx";
 import FranchisePage from "./pages/FranchisePage.tsx";
 import StoresPage from "./pages/StoresPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
+import BlogDetailPage from "./pages/BlogDetailPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,12 +21,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/franchise" element={<FranchisePage />} />
           <Route path="/stores" element={<StoresPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

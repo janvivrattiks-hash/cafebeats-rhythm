@@ -55,66 +55,73 @@ const MenuPage = () => {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="bg-gradient-coffee pt-32 pb-16">
-          <div className="container mx-auto px-4 text-center md:px-8">
-            <ScrollReveal>
-              <h1 className="font-display text-4xl font-bold text-cream md:text-6xl">Our Menu</h1>
-              <p className="mt-4 text-lg text-cream/80">Handcrafted with love, served with passion</p>
-            </ScrollReveal>
-          </div>
-        </section>
+      {/* Hero */}
+      <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden">
+        <img src="/banner-2.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
+        <div className="container relative z-10 mx-auto px-4 text-center md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center text-white"
+          >
+            <h1 className="font-display text-4xl font-bold text-white md:text-6xl uppercase tracking-wider">Our Menu</h1>
+            <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">Handcrafted with love, served with passion. Explore our curated selection of rhythm and brew.</p>
+          </motion.div>
 
-        {/* Tabs */}
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="mb-12 flex flex-wrap justify-center gap-3">
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActive(tab)}
-                  className={`relative rounded-full px-6 py-2.5 font-body text-sm font-semibold transition-all ${
-                    active === tab
-                      ? "bg-gradient-coffee text-primary-foreground shadow-warm"
-                      : "border border-border bg-card text-muted-foreground hover:border-accent hover:text-foreground"
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
+        </div>
+      </section>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="sticky top-20 z-30 mb-16 flex flex-wrap justify-center gap-4 bg-background/80 py-4 backdrop-blur-md">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActive(tab)}
+                className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${
+                  active === tab
+                    ? "bg-gradient-accent text-foreground shadow-accent"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
+                }`}
               >
-                {menuData[active]?.map((item, i) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.08 }}
-                    className="group flex gap-4 overflow-hidden rounded-2xl border border-border bg-card p-4 shadow-warm transition-all hover:-translate-y-1 hover:shadow-gold"
-                  >
-                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl">
-                      <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <h3 className="font-display text-lg font-bold text-foreground">{item.name}</h3>
-                      <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
-                      <span className="mt-2 text-sm font-bold text-accent">{item.price}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                {tab}
+              </button>
+            ))}
           </div>
-        </section>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {menuData[active as keyof typeof menuData].map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group overflow-hidden rounded-3xl bg-card shadow-warm border border-border"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between">
+                      <h3 className="font-display text-xl font-bold">{item.name}</h3>
+                      <span className="font-display text-lg font-bold text-accent">{item.price}</span>
+                    </div>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
       </main>
       <Footer />
     </>

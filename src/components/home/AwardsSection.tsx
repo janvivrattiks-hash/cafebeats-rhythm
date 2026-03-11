@@ -14,10 +14,10 @@ const AwardsSection = () => (
       <SectionTitle subtitle="Our Achievements" title="Awards & Recognition" />
       <div className="grid gap-6 md:grid-cols-3">
         {awards.map((a, i) => (
-          <ScrollReveal key={i} delay={i * 0.15}>
-            <div className="group rounded-2xl border border-border bg-card p-8 text-center shadow-warm transition-all duration-300 hover:-translate-y-2 hover:shadow-gold">
-              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-gold transition-transform duration-300 group-hover:scale-110">
-                <a.icon className="h-8 w-8 text-foreground" />
+          <ScrollReveal key={i} delay={i * 0.15} className="h-full">
+            <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 text-center shadow-warm transition-all duration-300 hover:-translate-y-2 hover:shadow-accent">
+              <div className="mx-auto mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-accent transition-transform duration-300 group-hover:scale-110">
+                <a.icon className="h-8 w-8 text-white" />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground">{a.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{a.desc}</p>

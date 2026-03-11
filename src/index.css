@@ -6,53 +6,52 @@
 
 @layer base {
   :root {
-    --background: 30 25% 96%;
-    --foreground: 20 20% 14%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 30 20% 98%;
-    --card-foreground: 20 20% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 20 20% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 25 60% 28%;
-    --primary-foreground: 36 45% 93%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 36 30% 90%;
-    --secondary-foreground: 25 60% 28%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 30 15% 92%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 40 55% 50%;
-    --accent-foreground: 20 20% 14%;
+    --accent: 217 91% 60%; /* Vibrant Blue from logo */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 25 60% 28%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    --cream: 36 45% 93%;
-    --coffee: 25 60% 28%;
-    --coffee-light: 25 40% 42%;
-    --chocolate: 20 35% 18%;
-    --gold: 40 55% 50%;
-    --gold-light: 40 60% 65%;
-    --beige: 30 25% 88%;
-    --warm-white: 30 30% 97%;
+    --theme-white: 0 0% 98%;
+    --theme-dark: 240 10% 3.9%; /* Charcoal/Black */
+    --theme-charcoal: 240 5% 15%;
+    --accent-vibrant: 217 91% 60%; /* Vibrant Blue from logo */
+    --accent-light: 210 100% 70%;
+    --theme-grey: 240 5% 96%;
+    --warm-white: 0 0% 98%;
 
-    --sidebar-background: 30 20% 96%;
-    --sidebar-foreground: 20 20% 14%;
-    --sidebar-primary: 25 60% 28%;
-    --sidebar-primary-foreground: 36 45% 93%;
-    --sidebar-accent: 30 15% 92%;
-    --sidebar-accent-foreground: 20 20% 14%;
-    --sidebar-border: 30 15% 85%;
-    --sidebar-ring: 25 60% 28%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -71,31 +70,43 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(40 55% 50%), hsl(40 60% 65%));
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-coffee {
-    background: linear-gradient(135deg, hsl(25 60% 28%), hsl(20 35% 18%));
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
   }
 
   .bg-gradient-warm {
-    background: linear-gradient(135deg, hsl(30 25% 96%), hsl(36 45% 93%));
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   }
 
-  .bg-gradient-gold {
-    background: linear-gradient(135deg, hsl(40 55% 50%), hsl(40 60% 65%));
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  }
+
+  /* Premium Button Gradient (Matches Logo Blue) */
+  .bg-gradient-premium {
+    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+    transition: all 0.3s ease;
+  }
+  
+  .bg-gradient-premium:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
   }
 
   .shadow-warm {
-    box-shadow: 0 10px 40px -10px hsl(25 60% 28% / 0.15);
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
   }
 
-  .shadow-gold {
-    box-shadow: 0 8px 30px -8px hsl(40 55% 50% / 0.25);
+  .shadow-accent {
+    box-shadow: 0 8px 30px -8px rgba(59, 130, 246, 0.3);
   }
 }
 
@@ -108,12 +119,12 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(30 25% 96%);
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(25 40% 42%);
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(25 60% 28%);
+  background: #94a3b8;
 }

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -26,57 +27,83 @@ const AboutPage = () => (
     <main>
       {/* Hero */}
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden">
-        <img src={store2} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-chocolate/70" />
-        <div className="relative z-10 text-center">
-          <ScrollReveal>
-            <h1 className="font-display text-4xl font-bold text-cream md:text-6xl">About CafeBeats</h1>
-            <p className="mt-4 text-lg text-cream/80">Our Journey, Our Passion</p>
-          </ScrollReveal>
+        <img src="/banner-1.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
+        <div className="container relative z-10 mx-auto px-4 text-center md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="font-display text-4xl font-bold text-white md:text-6xl">About CafeBeats</h1>
+            <p className="mt-4 text-lg text-white/80">Our Journey, Our Passion</p>
+          </motion.div>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-8">
-          <ScrollReveal direction="left">
-            <div className="overflow-hidden rounded-2xl">
-              <img src={hero2} alt="Our Story" className="w-full object-cover" />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal direction="right">
-            <span className="text-gradient-gold text-sm font-semibold uppercase tracking-[0.2em]">Our Story</span>
-            <h2 className="mt-3 font-display text-3xl font-bold text-foreground md:text-4xl">About CafeBeats</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Born from a passion for great coffee and good vibes, CafeBeats started as a small café in Mumbai in 2022. 
-              What began as a dream to create the perfect coffee experience has grown into a nationwide movement. 
-              We believe every cup of coffee should be an experience — one that blends premium quality with a 
-              warm, inviting atmosphere that makes you feel at home.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Today, CafeBeats is more than just a café chain. We're a community of coffee lovers, food enthusiasts, 
-              and dreamers who believe that great things happen over a cup of coffee.
-            </p>
-          </ScrollReveal>
+      <section className="bg-background py-20 md:py-32">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-video overflow-hidden rounded-3xl"
+            >
+              <img src="/about-cafebeat.webp" alt="Cafe Interior" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="mb-6 font-display text-3xl font-bold md:text-5xl">Where Coffee Meets Rhythm</h2>
+              <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+                <p>
+                  Born from a passion for great coffee and good vibes, CafeBeats started as a small café in Mumbai in 2022. 
+                  What began as a dream to create the perfect coffee experience has grown into a nationwide movement. 
+                  We believe every cup of coffee should be an experience — one that blends premium quality with a 
+                  vibrant atmosphere.
+                </p>
+                <p>
+                  Today, CafeBeats is more than just a café chain. We're a community of coffee lovers, food enthusiasts, 
+                  and dreamers who believe that great things happen over a cup of coffee.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="bg-secondary py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-8">
-          <SectionTitle subtitle="Our Journey" title="Growth Plan of CafeBeats" />
-          <div className="relative mx-auto max-w-2xl">
-            <div className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-gold to-coffee md:left-1/2 md:-translate-x-px" />
-            {timeline.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 0.15} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className={`relative mb-10 flex ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                  <div className="absolute left-4 top-2 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-gold bg-background md:left-1/2" />
-                  <div className={`ml-10 rounded-2xl border border-border bg-card p-6 shadow-warm md:ml-0 md:w-[45%] ${i % 2 === 0 ? "md:mr-auto md:ml-8" : "md:ml-auto md:mr-8"}`}>
-                    <span className="text-xl font-bold text-accent">{t.year}</span>
-                    <p className="mt-2 text-sm text-muted-foreground">{t.event}</p>
-                  </div>
+          <SectionTitle title="Our Milestones" subtitle="The journey of rhythm and brew" centered />
+          
+          <div className="relative mt-16 max-w-4xl mx-auto">
+            <div className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-primary to-accent md:left-1/2 md:-translate-x-px" />
+            
+            {timeline.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative mb-12 flex flex-col md:mb-20 ${i % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}`}
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg md:absolute md:left-1/2 md:-translate-x-5 z-10">
+                  <div className="h-4 w-4 rounded-full bg-accent" />
                 </div>
-              </ScrollReveal>
+                
+                <div className={`mt-4 rounded-2xl bg-card p-6 shadow-warm md:mt-0 md:w-[45%] ${i % 2 === 0 ? "md:mr-auto" : "md:ml-auto"}`}>
+                  <span className="font-display text-xl font-bold text-accent">{item.year}</span>
+                  <p className="mt-2 text-muted-foreground">{item.event}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -91,33 +118,39 @@ const AboutPage = () => (
               { icon: Eye, title: "Our Vision", text: "To become India's most loved café brand — creating spaces where people connect, create, and celebrate life over exceptional coffee." },
               { icon: Target, title: "Our Mission", text: "To deliver premium quality beverages and food in a warm, inviting atmosphere while building a sustainable business that empowers local communities." },
             ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.15}>
-                <div className="rounded-2xl border border-border bg-card p-8 shadow-warm transition-all hover:shadow-gold">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-gold">
-                    <item.icon className="h-7 w-7 text-foreground" />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+              >
+                <div className="rounded-2xl border border-border bg-card p-8 shadow-warm transition-all hover:shadow-primary">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent">
+                    <item.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <h3 className="font-display text-2xl font-bold text-foreground">{item.title}</h3>
                   <p className="mt-3 leading-relaxed text-muted-foreground">{item.text}</p>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="bg-gradient-coffee py-20 md:py-28">
+      <section className="bg-muted/30 py-20 md:py-28 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-8">
-          <SectionTitle subtitle="What We Stand For" title="Our Values" light />
+          <SectionTitle subtitle="What We Stand For" title="Our Values" />
           <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-6">
             {values.map((v, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group rounded-2xl border border-cream/10 bg-cream/5 p-6 text-center backdrop-blur-sm transition-all hover:border-gold/30 hover:bg-cream/10">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gold/20 transition-transform group-hover:scale-110">
-                    <v.icon className="h-7 w-7 text-gold" />
+                <div className="group rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all hover:border-accent/30 hover:shadow-warm">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 transition-transform group-hover:scale-110">
+                    <v.icon className="h-7 w-7 text-accent" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-cream">{v.label}</h3>
-                  <p className="mt-2 text-xs text-cream/60">{v.desc}</p>
+                  <h3 className="font-display text-lg font-bold text-foreground">{v.label}</h3>
+                  <p className="mt-2 text-xs text-muted-foreground">{v.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

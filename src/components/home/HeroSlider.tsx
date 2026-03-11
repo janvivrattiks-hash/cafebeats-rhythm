@@ -34,7 +34,7 @@ const HeroSlider = () => {
           className="absolute inset-0"
         >
           <img src={slides[current].image} alt="" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-chocolate/80 via-chocolate/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -50,23 +50,23 @@ const HeroSlider = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-2xl"
             >
-              <span className="text-gradient-gold mb-4 inline-block font-body text-sm font-semibold uppercase tracking-[0.2em]">
+              <span className="text-gradient-accent mb-4 inline-block font-body text-sm font-semibold uppercase tracking-[0.2em]">
                 CafeBeats
               </span>
-              <h1 className="font-display text-4xl font-bold leading-tight text-cream md:text-6xl lg:text-7xl">
+              <h1 className="font-display text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
                 {slides[current].tagline}
               </h1>
-              <p className="mt-4 text-base text-cream/80 md:text-lg">{slides[current].subtitle}</p>
+              <p className="mt-4 text-base text-white/80 md:text-lg">{slides[current].subtitle}</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   to="/menu"
-                  className="group flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-all hover:shadow-gold"
+                  className="group flex items-center gap-2 rounded-full bg-gradient-accent px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-all hover:shadow-accent"
                 >
                   Explore Menu <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   to="/stores"
-                  className="rounded-full border-2 border-cream/30 px-8 py-3.5 font-body text-sm font-semibold text-cream transition-all hover:border-gold hover:bg-gold/10"
+                  className="rounded-full border-2 border-white/30 px-8 py-3.5 font-body text-sm font-semibold text-white transition-all hover:border-accent hover:bg-accent/10"
                 >
                   Find Our Stores
                 </Link>
@@ -78,10 +78,10 @@ const HeroSlider = () => {
 
       {/* Nav arrows */}
       <div className="absolute bottom-8 right-8 z-10 flex gap-3">
-        <button onClick={() => go(-1)} className="rounded-full border border-cream/30 p-3 text-cream transition-all hover:border-gold hover:bg-gold/20">
+        <button onClick={() => go(-1)} className="rounded-full border border-white/30 p-3 text-white transition-all hover:border-accent hover:bg-accent/20">
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <button onClick={() => go(1)} className="rounded-full border border-cream/30 p-3 text-cream transition-all hover:border-gold hover:bg-gold/20">
+        <button onClick={() => go(1)} className="rounded-full border border-white/30 p-3 text-white transition-all hover:border-accent hover:bg-accent/20">
           <ChevronRight className="h-5 w-5" />
         </button>
       </div>
@@ -92,7 +92,7 @@ const HeroSlider = () => {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all ${i === current ? "w-8 bg-gold" : "w-2 bg-cream/40"}`}
+            className={`h-2 rounded-full transition-all ${i === current ? "w-8 bg-accent" : "w-2 bg-white/40"}`}
           />
         ))}
       </div>

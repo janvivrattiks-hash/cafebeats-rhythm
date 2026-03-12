@@ -10,7 +10,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <section className="relative flex h-[50vh] min-h-[400px] items-center justify-center overflow-hidden">
         <img src="/banner-3.webp" alt="Contact Us" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
@@ -29,7 +29,7 @@ const ContactPage = () => {
       <main className="py-20">
         <section className="container mx-auto px-4 md:px-8">
           <div className="mb-16 text-center">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="font-display text-3xl md:text-5xl font-bold mb-6 text-foreground"
@@ -40,7 +40,7 @@ const ContactPage = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact Info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
@@ -48,7 +48,7 @@ const ContactPage = () => {
             >
               <div className="bg-card p-8 rounded-3xl shadow-warm border border-border/50">
                 <h3 className="font-display text-2xl font-bold mb-8">Contact Information</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-gradient-premium p-3 rounded-2xl">
@@ -95,29 +95,29 @@ const ContactPage = () => {
               </div>
 
               {/* Map Placeholder */}
-              <div className="h-[300px] w-full bg-card rounded-3xl overflow-hidden shadow-warm grayscale hover:grayscale-0 transition-all duration-500 border border-border/50">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120663.4549448106!2d72.8252!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1709292929292!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
+              <div className="h-[300px] w-full bg-card rounded-3xl overflow-hidden shadow-warm transition-all duration-500 border border-border/50">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14875.947687777123!2d72.894858406842!3d21.23236718749165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0454de94c5a45%3A0xf682be781d2bad16!2sCafe%20Beats%20Restaurant!5e0!3m2!1sen!2sin!4v1773332653132!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
                   loading="lazy"
                 ></iframe>
               </div>
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
               className="bg-card p-8 md:p-12 rounded-3xl shadow-warm border border-border/50 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-premium opacity-10 rounded-bl-full -mr-10 -mt-10" />
-              
+
               <h3 className="font-display text-2xl font-bold mb-8">Send Us a Message</h3>
-              
+
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">

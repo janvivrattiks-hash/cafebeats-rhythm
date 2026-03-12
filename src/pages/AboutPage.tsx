@@ -60,18 +60,16 @@ const AboutPage = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="mb-6 font-display text-3xl font-bold md:text-5xl">Where Coffee Meets Rhythm</h2>
+              <h2 className="mb-6 font-display text-3xl font-bold md:text-5xl">About Cafe Beats</h2>
               <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Born from a passion for great coffee and good vibes, CafeBeats started as a small café in Mumbai in 2022. 
-                  What began as a dream to create the perfect coffee experience has grown into a nationwide movement. 
-                  We believe every cup of coffee should be an experience — one that blends premium quality with a 
-                  vibrant atmosphere.
+                  CAFE BEATS IS A CHAIN OF PROGRESSIVE, THEMED CAFÉS FOUNDED BY DR. MAHESH KHUNT AND MR. SHAILESH KHENI IN 2018. WITH A SHARED VISION ROOTED IN HOSPITALITY, THEY AIMED TO CREATE A DESTINATION WHERE PEOPLE CAN ENJOY FOOD, MUSIC, AND LEISURE.
                 </p>
-                <p>
-                  Today, CafeBeats is more than just a café chain. We're a community of coffee lovers, food enthusiasts, 
-                  and dreamers who believe that great things happen over a cup of coffee.
-                </p>
+                <h2 className="mt-6 mb-6 font-display text-3xl font-bold md:text-5xl">Growth Plan Of CafeBeats</h2>
+
+                <p>WITH A SLOW YET SUSTAINABLERATE , BRAND CAFEBEATS IS GROWING WELL . ALL THE 6 OUTLETS ARE OPERATIONAL AND ARE THE MOST LIKED OUTLETS IN THE LOCALITY. AS PER THE VISION 2022, CAFE BEATS IS PLANNING TO REACH 20 OUTLETS ACROSS INDIA WITH UPCOMING OUTLETS OF SURAT , ANAND, AHMEDABAD, DAMAN, NAVSARI,</p>
+                <p>AND MANY MORE . STRONG BUSINESS SUPPORT , VISIONARY OWNERSHIP AND COLLECTIVE STRATEGY IS HELPING THE BRAND TO SATISFY THE BRAND PROMISE AND CUSTOMER EXPECTATIONS. WITH THE LOWEST INVESTMENT IN THE INDUSTRY, CAFEBEATS ENSURES HIGHROI
+                  AND SUSTAINABLE GROWTH.</p>
               </div>
             </motion.div>
           </div>
@@ -82,10 +80,10 @@ const AboutPage = () => (
       <section className="bg-muted py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-8">
           <SectionTitle title="Our Milestones" subtitle="The journey of rhythm and brew" centered />
-          
+
           <div className="relative mt-16 max-w-4xl mx-auto">
             <div className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-primary to-accent md:left-1/2 md:-translate-x-px" />
-            
+
             {timeline.map((item, i) => (
               <motion.div
                 key={i}
@@ -98,7 +96,7 @@ const AboutPage = () => (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg md:absolute md:left-1/2 md:-translate-x-5 z-10">
                   <div className="h-4 w-4 rounded-full bg-accent" />
                 </div>
-                
+
                 <div className={`mt-4 rounded-2xl bg-card p-6 shadow-warm md:mt-0 md:w-[45%] ${i % 2 === 0 ? "md:mr-auto" : "md:ml-auto"}`}>
                   <span className="font-display text-xl font-bold text-accent">{item.year}</span>
                   <p className="mt-2 text-muted-foreground">{item.event}</p>

@@ -28,9 +28,6 @@ const OutletsSection = () => (
                 <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
                   <MapPin className="h-3.5 w-3.5" /> {o.address}
                 </p>
-                <Link to="/stores" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-light">
-                  View Details <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
               </div>
             </div>
           </ScrollReveal>

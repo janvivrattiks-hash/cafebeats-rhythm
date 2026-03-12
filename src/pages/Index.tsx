@@ -6,7 +6,6 @@ import FoodCategories from "@/components/home/FoodCategories";
 import BlogSection from "@/components/home/BlogSection";
 import ProductsSection from "@/components/home/ProductsSection";
 import OutletsSection from "@/components/home/OutletsSection";
-import GallerySection from "@/components/home/GallerySection";
 
 const Index = () => (
   <>
@@ -18,7 +17,6 @@ const Index = () => (
       <BlogSection />
       <ProductsSection />
       <OutletsSection />
-      <GallerySection />
     </main>
     <Footer />
   </>

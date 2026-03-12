@@ -27,12 +27,6 @@ const BlogSection = () => (
                 <span className="text-xs font-medium text-muted-foreground">{p.date}</span>
                 <h3 className="mt-2 font-display text-lg font-bold text-foreground">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                <Link 
-                  to={`/blog/${p.id}`} 
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors hover:text-accent-light"
-                >
-                  Read More <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
               </div>
             </div>
           </ScrollReveal>

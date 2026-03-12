@@ -6,10 +6,10 @@ import coffeeImg from "@/assets/coffee-item.jpg";
 import teaImg from "@/assets/tea-item.jpg";
 
 const products = [
-  { image: product1, name: "Coffee Powder", price: "₹349" },
-  { image: product2, name: "Cold Coffee Bottle", price: "₹149" },
-  { image: coffeeImg, name: "Instant Coffee", price: "₹249" },
-  { image: teaImg, name: "Premium Tea", price: "₹299" },
+  { image: product1, name: "Coffee Powder" },
+  { image: product2, name: "Cold Coffee Bottle" },
+  { image: coffeeImg, name: "Instant Coffee" },
+  { image: teaImg, name: "Premium Tea" },
 ];
 
 const ProductsSection = () => (
@@ -25,7 +25,6 @@ const ProductsSection = () => (
               </div>
               <div className="p-4 text-center">
                 <h3 className="font-display text-base font-bold text-foreground">{p.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-accent">{p.price}</p>
               </div>
             </div>
           </ScrollReveal>

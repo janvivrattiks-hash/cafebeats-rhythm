@@ -46,8 +46,14 @@ const Footer = () => {
             <h4 className="mb-4 font-display text-lg font-semibold">Contact Us</h4>
             <div className="space-y-3 text-sm text-white/70">
               <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> G-11 Blue Stone Building, Shyamdham MandirChowk, Sarthana Jakat Naka, Surat, Gujarat 395013</div>
-              <div className="flex items-center gap-3"><Phone className="h-4 w-4 shrink-0 text-accent" /> +91 99245 74894</div>
-              <div className="flex items-center gap-3"><Mail className="h-4 w-4 shrink-0 text-accent" /> info@cafebeats.in</div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-accent" /> 
+                <a href="tel:+919924574894" className="transition-colors hover:text-accent">+91 99245 74894</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-accent" /> 
+                <a href="mailto:info@cafebeats.in" className="transition-colors hover:text-accent">info@cafebeats.in</a>
+              </div>
             </div>
           </div>
         </div>

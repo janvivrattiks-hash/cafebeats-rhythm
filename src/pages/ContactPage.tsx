@@ -66,7 +66,9 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg">Phone Number</h4>
-                      <p className="text-muted-foreground">+91 99245 74894</p>
+                      <p className="text-muted-foreground">
+                        <a href="tel:+919924574894" className="hover:text-accent transition-colors">+91 99245 74894</a>
+                      </p>
                     </div>
                   </div>
 
@@ -76,7 +78,9 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg">Email Address</h4>
-                      <p className="text-muted-foreground">info@cafebeats.in</p>
+                      <p className="text-muted-foreground">
+                        <a href="mailto:info@cafebeats.in" className="hover:text-accent transition-colors">info@cafebeats.in</a>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -118,29 +122,49 @@ const ContactPage = () => {
 
               <h3 className="font-display text-2xl font-bold mb-8">Send Us a Message</h3>
 
-              <form className="space-y-6">
+              <form 
+                className="space-y-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get('name');
+                  const email = formData.get('email');
+                  const subject = formData.get('subject');
+                  const message = formData.get('message');
+                  
+                  const whatsappMessage = encodeURIComponent(
+                    `*New Contact Inquiry*\n\n` +
+                    `*Name:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Subject:* ${subject}\n` +
+                    `*Message:* ${message}`
+                  );
+                  
+                  window.open(`https://wa.me/919924574894?text=${whatsappMessage}`, '_blank');
+                }}
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Full Name</label>
-                    <Input placeholder="John Doe" className="bg-background/50 border-border focus:ring-accent" />
+                    <Input name="name" required placeholder="John Doe" className="bg-background/50 border-border focus:ring-accent" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email Address</label>
-                    <Input type="email" placeholder="john@example.com" className="bg-background/50 border-border focus:ring-accent" />
+                    <Input name="email" type="email" required placeholder="john@example.com" className="bg-background/50 border-border focus:ring-accent" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Subject</label>
-                  <Input placeholder="How can we help?" className="bg-background/50 border-border focus:ring-accent" />
+                  <Input name="subject" required placeholder="How can we help?" className="bg-background/50 border-border focus:ring-accent" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Message</label>
-                  <Textarea placeholder="Type your message here..." className="min-h-[150px] bg-background/50 border-border focus:ring-accent" />
+                  <Textarea name="message" required placeholder="Type your message here..." className="min-h-[150px] bg-background/50 border-border focus:ring-accent" />
                 </div>
 
-                <Button className="w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all">
+                <Button type="submit" className="w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all">
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>

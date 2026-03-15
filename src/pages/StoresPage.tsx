@@ -5,24 +5,23 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionTitle from "@/components/SectionTitle";
-import store1 from "@/assets/store-1.jpg";
-import store2 from "@/assets/store-2.jpg";
-import hero1 from "@/assets/hero-1.jpg";
-
 const stores = [
-  { name: "Mota Varachha - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: store1, mapUrl: "https://maps.google.com" },
-  { name: "Dumas - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: store2, mapUrl: "https://maps.google.com" },
-  { name: "Mumbai", address: "Mumbai, Maharashtra", phone: "+91 99245 74894", image: hero1, mapUrl: "https://maps.google.com" },
-  { name: "Piplod - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: store1, mapUrl: "https://maps.google.com" },
-  { name: "Khadki (NH-48)", address: "NH-48, Gujarat", phone: "+91 99245 74894", image: store2, mapUrl: "https://maps.google.com" },
-  { name: "Sarthana - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: hero1, mapUrl: "https://maps.google.com" },
-  { name: "Vapi", address: "Vapi, Gujarat", phone: "+91 99245 74894", image: store1, mapUrl: "https://maps.google.com" },
-  { name: "Vadodra", address: "Vadodra, Gujarat", phone: "+91 99245 74894", image: store2, mapUrl: "https://maps.google.com" },
-  { name: "Navsari", address: "Navsari, Gujarat", phone: "+91 99245 74894", image: hero1, mapUrl: "https://maps.google.com" },
-  { name: "Hajira-Ghogha Roao Ferry", address: "Multiple Outlets, Gujarat", phone: "+91 99245 74894", image: store1, mapUrl: "https://maps.google.com" },
-  { name: "Daman", address: "Daman, India", phone: "+91 99245 74894", image: store2, mapUrl: "https://maps.google.com" },
-  { name: "Anthem Circle", address: "Surat, Gujarat", phone: "+91 99245 74894", image: hero1, mapUrl: "https://maps.google.com" },
-  { name: "Pal-Adajan", address: "Surat, Gujarat", phone: "+91 99245 74894", image: store1, mapUrl: "https://maps.google.com" },
+  { name: "Mota Varachha - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/varachha.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Mota+Varachha,+Surat" },
+  { name: "Dumas - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Dumas.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Arena+Dumas+Road,+Surat" },
+  { name: "Mumbai", address: "Mumbai, Maharashtra", phone: "+91 99245 74894", image: "/mumbai.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Bandra+Mumbai" },
+  { name: "Piplod - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Piplod.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Piplod,+Surat" },
+  { name: "Khadki (NH-48)", address: "NH-48, Gujarat", phone: "+91 99245 74894", image: "/Khadki(NH-48).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Khadki,+NH-48" },
+  { name: "Sarthana - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/sarthana.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Sarthana+Jakat+Naka,+Surat" },
+  { name: "Vapi", address: "Vapi, Gujarat", phone: "+91 99245 74894", image: "/Vapi.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Vapi,+Gujarat" },
+  { name: "Vadodara", address: "Vadodara, Gujarat", phone: "+91 99245 74894", image: "/Vadodara.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Akota,+Vadodara" },
+  { name: "Navsari", address: "Navsari, Gujarat", phone: "+91 99245 74894", image: "/Navsari.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Navsari,+Gujarat" },
+  { name: "Hajira-Ghogha Roao Ferry", address: "Multiple Outlets, Gujarat", phone: "+91 99245 74894", image: "/HAJIRA-GHOGHA ROAO FERRY (MULTIPLE OUTLETS).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Hajira+Ghogha+Ferry" },
+  { name: "Daman", address: "Daman, India", phone: "+91 99245 74894", image: "/Daman.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Dabhel,+Daman" },
+  { name: "Anthem Circle", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Anthem-circle.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Anthem+Circle,+Surat" },
+  { name: "Pal-Adajan", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Pal-Adajan.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Pal-Adajan,+Surat" },
+  { name: "Katargam", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/katargam.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Katargam,+Surat" },
+  { name: "Rajkot", address: "Rajkot, Gujarat", phone: "+91 99245 74894", image: "/rajkot.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Kalavad+Road,+Rajkot" },
+  { name: "IIT Indore(Madhya Pradesh)", address: "Indore, Madhya Pradesh", phone: "+91 99245 74894", image: "/sarthana.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+IIT+Indore" },
 ];
 
 const StoresPage = () => (
@@ -63,7 +62,8 @@ const StoresPage = () => (
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> {s.address}
                     </p>
                     <p className="mt-1.5 flex items-center gap-1.5 text-sm text-muted-foreground">
-                      <Phone className="h-4 w-4 shrink-0 text-accent" /> {s.phone}
+                      <Phone className="h-4 w-4 shrink-0 text-accent" /> 
+                      <a href={`tel:${s.phone.replace(/\s+/g, '')}`} className="hover:text-accent transition-colors">{s.phone}</a>
                     </p>
                     <a
                       href={s.mapUrl}
@@ -99,7 +99,7 @@ const StoresPage = () => (
                 Apply for Franchise <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                to="/franchise"
+                to="/contact"
                 className="rounded-full border-2 border-border px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-all hover:border-accent hover:bg-accent/5"
               >
                 Contact Us

@@ -1,15 +1,10 @@
 import ScrollReveal from "../ScrollReveal";
 import SectionTitle from "../SectionTitle";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import coffeeImg from "@/assets/coffee-item.jpg";
-import teaImg from "@/assets/tea-item.jpg";
-
 const products = [
-  { image: product1, name: "Coffee Powder" },
-  { image: product2, name: "Cold Coffee Bottle" },
-  { image: coffeeImg, name: "Instant Coffee" },
-  { image: teaImg, name: "Premium Tea" },
+  { image: "/our-delicious-products-1.webp", name: "Coffee Powder" },
+  { image: "/our-delicious-products-2.webp", name: "Cold Coffee Bottle" },
+  { image: "/our-delicious-products-3.webp", name: "Instant Coffee" },
+  { image: "/our-delicious-products-4.webp", name: "Premium Tea" },
 ];
 
 const ProductsSection = () => (
@@ -22,9 +17,6 @@ const ProductsSection = () => (
             <div className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-accent">
               <div className="aspect-square overflow-hidden">
                 <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="font-display text-base font-bold text-foreground">{p.name}</h3>
               </div>
             </div>
           </ScrollReveal>

@@ -2,14 +2,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-
 const slides = [
-  { image: hero1, tagline: "Where Coffee Meets Rhythm", subtitle: "Premium handcrafted beverages & delicious food" },
-  { image: hero2, tagline: "Crafted With Passion", subtitle: "Every cup tells a story of dedication & artistry" },
-  { image: hero3, tagline: "Taste the Experience", subtitle: "Indulge in our curated menu of flavors & aromas" },
+  { image: "/slider-1.webp", tagline: "Where Coffee Meets Rhythm", subtitle: "Premium handcrafted beverages & delicious food" },
+  { image: "/slider-2.webp", tagline: "Crafted With Passion", subtitle: "Every cup tells a story of dedication & artistry" },
+  { image: "/slider-3.webp", tagline: "Taste the Experience", subtitle: "Indulge in our curated menu of flavors & aromas" },
 ];
 
 const HeroSlider = () => {

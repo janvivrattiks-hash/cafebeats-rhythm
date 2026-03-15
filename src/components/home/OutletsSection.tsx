@@ -2,14 +2,10 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../ScrollReveal";
 import SectionTitle from "../SectionTitle";
-import store1 from "@/assets/store-1.jpg";
-import store2 from "@/assets/store-2.jpg";
-import hero1 from "@/assets/hero-1.jpg";
-
 const outlets = [
-  { image: store1, city: "Mumbai", address: "Bandra West, Linking Road" },
-  { image: store2, city: "Delhi", address: "Connaught Place, Block A" },
-  { image: hero1, city: "Bangalore", address: "Indiranagar, 12th Main" },
+  { image: "/sarthana.webp", city: "Sarthana - Surat", address: "Surat, Gujarat" },
+  { image: "/varachha.webp", city: "Mota Varachha - Surat", address: "Surat, Gujarat" },
+  { image: "/mumbai.webp", city: "Mumbai", address: "Mumbai, Maharashtra" },
 ];
 
 const OutletsSection = () => (

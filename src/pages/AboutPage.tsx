@@ -61,14 +61,14 @@ const AboutPage = () => (
               viewport={{ once: true }}
             >
               <h2 className="mb-6 font-display text-3xl font-bold md:text-5xl">About Cafe Beats</h2>
-              <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-                <p>
+              <div className="space-y-4 text-lg leading-relaxed">
+                <p className="text-muted-foreground capitalize">
                   CAFE BEATS IS A CHAIN OF PROGRESSIVE, THEMED CAFÉS FOUNDED BY DR. MAHESH KHUNT AND MR. SHAILESH KHENI IN 2018. WITH A SHARED VISION ROOTED IN HOSPITALITY, THEY AIMED TO CREATE A DESTINATION WHERE PEOPLE CAN ENJOY FOOD, MUSIC, AND LEISURE.
                 </p>
                 <h2 className="mt-6 mb-6 font-display text-3xl font-bold md:text-5xl">Growth Plan Of CafeBeats</h2>
 
-                <p>WITH A SLOW YET SUSTAINABLERATE , BRAND CAFEBEATS IS GROWING WELL . ALL THE 6 OUTLETS ARE OPERATIONAL AND ARE THE MOST LIKED OUTLETS IN THE LOCALITY. AS PER THE VISION 2022, CAFE BEATS IS PLANNING TO REACH 20 OUTLETS ACROSS INDIA WITH UPCOMING OUTLETS OF SURAT , ANAND, AHMEDABAD, DAMAN, NAVSARI,</p>
-                <p>AND MANY MORE . STRONG BUSINESS SUPPORT , VISIONARY OWNERSHIP AND COLLECTIVE STRATEGY IS HELPING THE BRAND TO SATISFY THE BRAND PROMISE AND CUSTOMER EXPECTATIONS. WITH THE LOWEST INVESTMENT IN THE INDUSTRY, CAFEBEATS ENSURES HIGHROI
+                <p className="text-muted-foreground capitalize">WITH A SLOW YET SUSTAINABLERATE , BRAND CAFEBEATS IS GROWING WELL . ALL THE 6 OUTLETS ARE OPERATIONAL AND ARE THE MOST LIKED OUTLETS IN THE LOCALITY. AS PER THE VISION 2022, CAFE BEATS IS PLANNING TO REACH 20 OUTLETS ACROSS INDIA WITH UPCOMING OUTLETS OF SURAT , ANAND, AHMEDABAD, DAMAN, NAVSARI,</p>
+                <p className="text-muted-foreground capitalize">AND MANY MORE . STRONG BUSINESS SUPPORT , VISIONARY OWNERSHIP AND COLLECTIVE STRATEGY IS HELPING THE BRAND TO SATISFY THE BRAND PROMISE AND CUSTOMER EXPECTATIONS. WITH THE LOWEST INVESTMENT IN THE INDUSTRY, CAFEBEATS ENSURES HIGHROI
                   AND SUSTAINABLE GROWTH.</p>
               </div>
             </motion.div>
@@ -123,12 +123,12 @@ const AboutPage = () => (
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
               >
-                <div className="rounded-2xl border border-border bg-card p-8 shadow-warm transition-all hover:shadow-primary">
+                <div className="h-full rounded-2xl border border-border bg-card p-8 shadow-warm transition-all hover:shadow-primary flex flex-col">
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent">
                     <item.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <h3 className="font-display text-2xl font-bold text-foreground">{item.title}</h3>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">{item.text}</p>
+                  <p className="mt-3 leading-relaxed text-muted-foreground flex-grow">{item.text}</p>
                 </div>
               </motion.div>
             ))}

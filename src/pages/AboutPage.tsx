@@ -44,12 +44,12 @@ const AboutPage = () => (
       {/* Story */}
       <section className="bg-background py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-video overflow-hidden rounded-3xl"
+              className="relative h-full min-h-[300px] overflow-hidden rounded-3xl"
             >
               <img src="/about-cafebeat.webp" alt="Cafe Interior" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent" />
@@ -60,16 +60,18 @@ const AboutPage = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="mb-6 font-display text-3xl font-bold md:text-5xl">About Cafe Beats</h2>
-              <div className="space-y-4 text-lg leading-relaxed">
-                <p className="text-muted-foreground capitalize">
-                  CAFE BEATS IS A CHAIN OF PROGRESSIVE, THEMED CAFÉS FOUNDED BY DR. MAHESH KHUNT AND MR. SHAILESH KHENI IN 2018. WITH A SHARED VISION ROOTED IN HOSPITALITY, THEY AIMED TO CREATE A DESTINATION WHERE PEOPLE CAN ENJOY FOOD, MUSIC, AND LEISURE.
+              <h2 className="mb-4 font-display text-3xl font-bold md:text-5xl">About Cafe Beats</h2>
+              <div className="space-y-4 text-base leading-relaxed">
+                <p className="text-muted-foreground">
+                  CafeBeats is a chain of progressive, themed cafés founded by Dr. Mahesh Khunt and Mr. Shailesh Kheni in 2018. With a shared vision rooted in hospitality, we create destinations where people enjoy fine food, music, and leisure.
                 </p>
-                <h2 className="mt-6 mb-6 font-display text-3xl font-bold md:text-5xl">Growth Plan Of CafeBeats</h2>
+                <h3 className="mb-4 font-display text-3xl font-bold md:text-5xl">Growth Plan</h3>
+                <p className="text-muted-foreground capitalize">
+                  With A Slow Yet Sustainablerate , Brand Cafebeats Is Growing Well . All The 6 Outlets Are Operational And Are The Most Liked Outlets In The Locality. As Per The Vision 2022, Cafe Beats Is Planning To Reach 20 Outlets Across India With Upcoming Outlets Of Surat , Anand, Ahmedabad, Daman, Navsari,
+                  And Many More . Strong Business Support , Visionary Ownership And Collective Strategy Is Helping The Brand To Satisfy The Brand Promise And Customer Expectations. With The Lowest Investment In The Industry, Cafebeats Ensures Highroi
+                  And Sustainable Growth.
 
-                <p className="text-muted-foreground capitalize">WITH A SLOW YET SUSTAINABLERATE , BRAND CAFEBEATS IS GROWING WELL . ALL THE 6 OUTLETS ARE OPERATIONAL AND ARE THE MOST LIKED OUTLETS IN THE LOCALITY. AS PER THE VISION 2022, CAFE BEATS IS PLANNING TO REACH 20 OUTLETS ACROSS INDIA WITH UPCOMING OUTLETS OF SURAT , ANAND, AHMEDABAD, DAMAN, NAVSARI,</p>
-                <p className="text-muted-foreground capitalize">AND MANY MORE . STRONG BUSINESS SUPPORT , VISIONARY OWNERSHIP AND COLLECTIVE STRATEGY IS HELPING THE BRAND TO SATISFY THE BRAND PROMISE AND CUSTOMER EXPECTATIONS. WITH THE LOWEST INVESTMENT IN THE INDUSTRY, CAFEBEATS ENSURES HIGHROI
-                  AND SUSTAINABLE GROWTH.</p>
+                </p>
               </div>
             </motion.div>
           </div>

@@ -18,13 +18,18 @@ const reels = [
     title: "Our Signature Cold Brew 🧊",
     videoUrl: "/our-delicious-food-3.MOV"
   },
+  {
+    id: 4,
+    title: "Delicious Bites 🍕✨",
+    videoUrl: "/our-delicious-food-4.MOV"
+  },
 ];
 
 const FoodCategories = () => (
   <section className="bg-muted py-20 md:py-28">
     <div className="container mx-auto px-4 md:px-8">
       <SectionTitle subtitle="What We Serve" title="Our Delicious Food" description="Watch our latest reels and explore the delicious world of CafeBeats." />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-10 max-w-6xl mx-auto">
         {reels.map((reel, i) => (
           <ScrollReveal key={reel.id} delay={i * 0.2}>
             <div className="group relative block overflow-hidden rounded-3xl bg-black shadow-warm aspect-[9/16] cursor-pointer">

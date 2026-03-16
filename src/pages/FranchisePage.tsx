@@ -103,6 +103,38 @@ const FranchisePage = () => {
           </div>
         </section>
 
+        {/* Simplified Inquiry */}
+        <section className="py-16 md:py-24 bg-muted/30 border-y border-border/50">
+          <div className="container mx-auto px-4 md:px-8 text-center">
+            <ScrollReveal>
+              <h2 className="font-display text-2xl font-bold text-foreground md:text-4xl uppercase tracking-wider">For More Inquire</h2>
+              <div className="mt-8 flex flex-col items-center justify-center gap-6">
+                <a 
+                  href="tel:+919924574894" 
+                  className="font-display text-xl font-bold text-accent transition-colors hover:text-accent-light md:text-3xl"
+                >
+                  +91 99245 74894
+                </a>
+                
+                <p className="max-w-xl text-base text-muted-foreground">
+                  Have questions about our franchise models? Reach out to us directly on WhatsApp for instant assistance and detailed brochures.
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const message = encodeURIComponent("Hi CafeBeats, I'm interested in knowing more about your Franchise Opportunities.");
+                    window.open(`https://wa.me/919924574894?text=${message}`, '_blank');
+                  }}
+                  className="mt-4 flex items-center gap-3 rounded-full bg-gradient-accent px-8 py-4 font-display text-base font-bold text-foreground shadow-accent"
+                >
+                  <Send className="h-5 w-5" /> Chat on WhatsApp
+                </motion.button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Why Royalty Section */}
         <section className="py-24 md:py-32 bg-background overflow-hidden border-t border-border">
           <div className="container mx-auto px-4 md:px-8">

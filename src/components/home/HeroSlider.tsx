@@ -19,48 +19,74 @@ const HeroSlider = () => {
   const go = (dir: number) => setCurrent((p) => (p + dir + slides.length) % slides.length);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      <AnimatePresence>
+    <section className="relative h-screen w-full overflow-hidden bg-black">
+      <AnimatePresence initial={false}>
         <motion.div
           key={current}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
           className="absolute inset-0"
         >
           <motion.img 
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 6, ease: "easeOut" }}
+            transition={{ duration: 8, ease: "linear" }}
             src={slides[current].image} 
             alt="" 
             className="h-full w-full object-cover" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center">
         <div className="container mx-auto px-4 md:px-8">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout">
             <motion.div
               key={current}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.22, 1, 0.36, 1],
+                staggerChildren: 0.1
+              }}
               className="max-w-2xl"
             >
-              <span className="text-gradient-accent mb-4 inline-block font-body text-sm font-semibold uppercase tracking-[0.2em]">
+              <motion.span 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-gradient-accent mb-4 inline-block font-body text-sm font-semibold uppercase tracking-[0.2em]"
+              >
                 CafeBeats
-              </span>
-              <h1 className="font-display text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
+              </motion.span>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="font-display text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
+              >
                 {slides[current].tagline}
-              </h1>
-              <p className="mt-4 text-base text-white/80 md:text-lg">{slides[current].subtitle}</p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="mt-4 text-base text-white/80 md:text-lg"
+              >
+                {slides[current].subtitle}
+              </motion.p>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="mt-8 flex flex-wrap gap-4"
+              >
                 <Link
                   to="/menu"
                   className="group flex items-center gap-2 rounded-full bg-gradient-accent px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-all hover:shadow-accent"
@@ -73,7 +99,7 @@ const HeroSlider = () => {
                 >
                   Find Our Stores
                 </Link>
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>

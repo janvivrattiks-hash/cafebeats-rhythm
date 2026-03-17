@@ -5,153 +5,171 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const tabs = [
-  "Tea With Milk", "Tea Without Milk", "More Than Tea", "Iced Tea", 
-  "Hot Coffee", "Cold Coffee", "Iced Coffee", "Mocktails", 
-  "Shakes", "Pizza (9 inch)", "Pasta", "Sandwiches", 
-  "Noodles", "Fries", "Farali Special", "Nachos", 
-  "Garlic Bread", "Snacks", "Desserts", "Cold Beverages"
+  "Speciality Coffee", "Signature Coffee", "Hot Chocolate", "Shakes",
+  "Iced Coffee", "Hot Coffee", "Frappe", "Specialty Matcha",
+  "Signature Coolers", "Classic Pasta", "Finger Bites", "Quick Bites",
+  "Garlic Bread", "Eat Healthy Salads", "Sandwich", "Rice Bowl",
+  "On The Toast", "Appetizer", "Chinese", "Sizzler", "CB Flatbreads (Pizza)",
+  "Desserts"
 ];
 
-const menuData: Record<string, { name: string; desc: string; tag?: string }[]> = {
-  "Tea With Milk": [
-    { name: "Masala Tea", desc: "Traditional spiced tea with aromatic blend of cardamom and ginger", tag: "Bestseller" },
-    { name: "Ginger Pudina Tea", desc: "Refreshing blend of ginger and mint for a perfect warming experience", tag: "Bestseller" },
-    { name: "Pudina Tea", desc: "Refreshing mint-infused tea with rich milky texture" },
-    { name: "Cinnamon Tea", desc: "Warming cinnamon-spiced tea with aromatic flavors" },
-    { name: "Elaichi Tea", desc: "Fragrant cardamom-infused tea with rich milky texture" },
+const menuData: Record<string, { name: string; desc: string; tag?: string; price?: string }[]> = {
+  "Speciality Coffee": [
+    { name: "Berry Tonic", desc: "Premium speciality coffee with a berry twist", price: "299" },
+    { name: "Yuzu Tonic", desc: "Citrusy and refreshing coffee tonic", price: "320" },
+    { name: "Cold Brew Tonic", desc: "Smooth cold brew blended with crisp tonic water", price: "320" },
+    { name: "Espresso Tonic", desc: "Bold espresso shots with tonic water", price: "290" },
+    { name: "Flavoured Espresso Tonic", desc: "ORANGE/CRANBERRY/CINNAMON/PEACH/ IRISH", price: "310" },
+    { name: "Cold Brew", desc: "Classic smooth and rich cold brew", price: "250" },
   ],
-  "Tea Without Milk": [
-    { name: "Black Lemon Ginger Tea", desc: "Zesty black tea with lemon and ginger for a citrusy kick" },
-    { name: "Green Lemon Tea", desc: "Light and refreshing green tea with fresh lemon", tag: "Bestseller" },
-    { name: "Darjeeling Lemon Ginger Tea", desc: "Premium Darjeeling tea with lemon and ginger blend" },
-    { name: "Green Lemon Ginger Tea", desc: "Antioxidant-rich green tea with lemon and ginger" },
-    { name: "Kashmiri Kahwa", desc: "Traditional Kashmiri tea with almonds and aromatic spices" },
+  "Signature Coffee": [
+    { name: "Cuma's Coffee", desc: "Our secret signature blend", price: "330" },
+    { name: "Protein Espresso", desc: "Coffee with a protein boost", price: "320" },
+    { name: "Martini Espresso", desc: "Sophisticated coffee with a classic twist", price: "299" },
+    { name: "Vietnamese", desc: "Authentic Vietnamese style coffee", price: "299" },
+    { name: "Newton Hazelnut Espresso", desc: "Hazelnut infused signature espresso", price: "299" },
   ],
-  "More Than Tea": [
-    { name: "Hot Chocolate", desc: "Rich and creamy hot chocolate perfect for cold days" },
-  ],
-  "Iced Tea": [
-    { name: "Peach Ice Tea", desc: "Refreshing peach-flavored iced tea with natural fruit essence", tag: "Bestseller" },
-    { name: "Lemon Ice Tea", desc: "Classic lemon iced tea perfect for hot summer days", tag: "Bestseller" },
-  ],
-  "Hot Coffee": [
-    { name: "Espresso", desc: "Strong and bold shot of premium coffee", tag: "Bestseller" },
-    { name: "Americano", desc: "Rich espresso with hot water for a smooth finish" },
-    { name: "Cappuccino", desc: "Rich espresso with velvety steamed milk foam", tag: "Bestseller" },
-    { name: "Café Latte", desc: "Smooth espresso with steamed milk and light foam" },
-    { name: "Flavored Americano", desc: "Classic americano with your choice of flavor syrup" },
-    { name: "Flavored Cappuccino", desc: "Traditional cappuccino enhanced with flavor syrups" },
-    { name: "Mocha Latte", desc: "Perfect blend of espresso, chocolate, and steamed milk" },
-  ],
-  "Cold Coffee": [
-    { name: "Cold Coffee", desc: "Creamy iced coffee with a perfect balance of sweetness" },
-    { name: "Cold Coffee With Ice Cream", desc: "Indulgent cold coffee topped with vanilla ice cream", tag: "Bestseller" },
-    { name: "Caramel Cold Coffee", desc: "Rich cold coffee with sweet caramel flavor" },
-    { name: "Hazelnut Coffee", desc: "Smooth cold coffee with aromatic hazelnut flavor", tag: "Bestseller" },
-    { name: "Betan Mocha", desc: "Rich chocolate and coffee blend with creamy texture" },
-    { name: "Brownie Mocha", desc: "Decadent mocha with brownie pieces for extra indulgence" },
-  ],
-  "Iced Coffee": [
-    { name: "Iced Coffee", desc: "Chilled coffee served over ice for refreshing taste" },
-    { name: "Iced Espresso", desc: "Bold espresso shots served over ice" },
-    { name: "Iced Americano", desc: "Chilled espresso with cold water for smooth finish" },
-    { name: "Tonic Espresso", desc: "Unique blend of espresso with tonic water" },
-    { name: "Flavored Iced Coffee", desc: "Iced coffee with lemon, orange, or cranberry flavor" },
-  ],
-  "Mocktails": [
-    { name: "Mojito Mint", desc: "Fresh mint and lime mocktail with sparkling soda" },
-    { name: "Green Apple Mojito", desc: "Refreshing green apple flavored mojito" },
-    { name: "Blue Curacao Mojito", desc: "Tropical blue-colored refreshing fruity mocktail" },
-    { name: "Orange Mojito", desc: "Zesty orange mojito with fresh citrus flavors", tag: "Bestseller" },
-    { name: "Cranberry Mojito", desc: "Tangy cranberry mojito with fresh mint" },
+  "Hot Chocolate": [
+    { name: "The Classical", desc: "Rich and creamy classic hot chocolate", price: "200" },
+    { name: "Creamy Chocolate", desc: "Extra creamy and indulgent chocolate experience", price: "220" },
   ],
   "Shakes": [
-    { name: "Classical Vanilla", desc: "Creamy vanilla milkshake with rich smooth texture" },
-    { name: "Strawberry Shake", desc: "Fresh strawberry milkshake with creamy goodness" },
-    { name: "Green Apple Shake", desc: "Refreshing green apple shake with crisp flavors" },
-    { name: "Oreo Chocolate", desc: "Creamy vanilla shake blended with crushed Oreo cookies", tag: "Bestseller" },
-    { name: "Kit Kat Shake", desc: "Rich chocolate shake with Kit Kat pieces", tag: "Bestseller" },
-    { name: "Nutella Shake", desc: "Indulgent Nutella chocolate hazelnut shake" },
-    { name: "Biscoff Shake", desc: "Creamy shake with signature Biscoff cookie flavor" },
+    { name: "Oreo Shake", desc: "Creamy vanilla shake blended with crushed Oreo cookies", price: "299", tag: "Bestseller" },
+    { name: "Ferrero Rocher Shake", desc: "Luxurious shake with crushed Ferrero Rocher", price: "375" },
+    { name: "Biscoff Shake", desc: "Creamy shake with signature Biscoff cookie flavor", price: "410" },
+    { name: "Nutella Dark Fantasy Shake", desc: "Rich chocolate hazelnut and cookie blend", price: "385" },
+    { name: "KitKat Shake", desc: "Rich chocolate shake with Kit Kat pieces", price: "375", tag: "Bestseller" },
   ],
-  "Pizza (9 inch)": [
-    { name: "Margherita Pizza", desc: "Classic combination of fresh mozzarella, ripe tomatoes, aromatic basil, and olive oil" },
-    { name: "Fresh Veggie Pizza", desc: "Vibrant seasonal vegetables, capsicum and onion on golden crust (Jain)" },
-    { name: "Cheese N Corn Pizza", desc: "Creamy cheese, sweet corn, and herbs on golden crust (Jain)" },
-    { name: "Tandoori Paneer Pizza", desc: "Crispy base with tandoori paneer, onion, capsicum in rich tandoori sauce" },
-    { name: "BBQ Paneer Pizza", desc: "Smoky BBQ paneer with mozzarella, onions, and bell peppers" },
-    { name: "Paprika Pizza", desc: "Spicy paprika, fresh bell peppers, mozzarella cheese on crispy crust" },
+  "Iced Coffee": [
+    { name: "Iced Espresso", desc: "Bold espresso shots served over ice", price: "190" },
+    { name: "Iced Americano", desc: "Chilled espresso with cold water for smooth finish", price: "210" },
+    { name: "Iced Latte", desc: "Smooth espresso with chilled milk over ice", price: "259" },
+    { name: "Iced Mocha", desc: "Perfect blend of espresso, chocolate, and cold milk", price: "235" },
   ],
-  "Pasta": [
-    { name: "Red Sauce Pasta", desc: "Classic pasta in rich tomato-based sauce with herbs" },
-    { name: "White Sauce Pasta", desc: "Creamy white sauce pasta with cheese and herbs" },
-    { name: "Pink Sauce Pasta", desc: "Perfect blend of red and white sauce with pasta" },
+  "Hot Coffee": [
+    { name: "Espresso", desc: "Strong and bold shot of premium coffee", price: "190", tag: "Bestseller" },
+    { name: "Cappuccino", desc: "Rich espresso with velvety steamed milk foam", price: "190", tag: "Bestseller" },
+    { name: "Mocha Latte", desc: "Perfect blend of espresso, chocolate, and steamed milk", price: "250" },
+    { name: "Affogato", desc: "NUTELLA OREO/ HAZELUNT/CARAMEL", price: "240" },
+    { name: "Americano", desc: "Rich espresso with hot water for a smooth finish", price: "210" },
+    { name: "Pistachio Kunafa Affogato", desc: "Unique blend of pistachio and Kunafa with coffee", price: "380" },
   ],
-  "Sandwiches": [
-    { name: "Veg Sandwich", desc: "Fresh vegetables including potato, tomatoes, cucumbers, onions (Jain)" },
-    { name: "Veg Cheese Sandwich", desc: "Fresh vegetables with cheese layered between bread slices (Jain)", tag: "Bestseller" },
-    { name: "Cheese Chutney Sandwich", desc: "Flavorful combination of cheese with tangy and spicy chutney" },
-    { name: "Cheese Corn Sandwich", desc: "Creamy mixture of cheese and sweet corn with onion and capsicum (Jain)", tag: "Bestseller" },
-    { name: "Peri Peri Paneer Sandwich", desc: "Soft paneer marinated in tangy and fiery peri peri sauce (Jain)" },
-    { name: "Chill Mill Sandwich", desc: "Refreshing and creamy delight with balanced mix of flavors" },
-    { name: "Tandoori Paneer Sandwich", desc: "Marinated paneer with onion, capsicum in tandoori spice mix", tag: "Bestseller" },
+  "Frappe": [
+    { name: "The Classic Beaten", desc: "Traditionally beaten cold coffee", price: "260" },
+    { name: "Mocha Beat", desc: "Rich chocolate and coffee blend beats", price: "290" },
+    { name: "Flavoured Frappé", desc: "HAZELUNT/ CINNAMON/ BISCOFF/NUTELLA", price: "299" },
+    { name: "Brownie Mocha", desc: "Decadent mocha with brownie pieces for extra indulgence", price: "340" },
   ],
-  "Noodles": [
-    { name: "Veg Maggi Noodles", desc: "Classic Maggi noodles with vegetables and spices (Jain)", tag: "Bestseller" },
-    { name: "Cheese Veg Maggi Noodles", desc: "Maggi noodles with vegetables and melted cheese (Jain)" },
+  "Specialty Matcha": [
+    { name: "Hot Matcha Latte", desc: "Ceremonial grade hot matcha", price: "385" },
+    { name: "Iced Matcha Latte", desc: "ORANGE/MANGO/STRAWBERRY/BLUE BERRY", price: "395" },
+    { name: "Yuzu Tonic Matcha", desc: "Zesty yuzu with matcha and tonic", price: "390" },
+    { name: "Tropical Tonic Matcha", desc: "Refreshing tropical matcha blend", price: "400" },
+    { name: "Passion Fruit Tonic Matcha", desc: "Exotic passion fruit matcha", price: "430" },
   ],
-  "Fries": [
-    { name: "French Fries", desc: "Crispy golden fries seasoned with herbs and salt" },
-    { name: "Peri Peri Fries", desc: "Spicy peri peri seasoned crispy fries" },
-    { name: "Cheese Balls", desc: "Crispy cheese balls served in portions of 4 pieces" },
+  "Signature Coolers": [
+    { name: "Mojito", desc: "Classic mint and lime cooler", price: "250" },
+    { name: "Flavoured Mojito", desc: "ORANGE / GREEN APPLE / STRAWBERRY / KIWI / BLUEBERRY", price: "280" },
+    { name: "Cranberry Delight", desc: "Tangy cranberry refreshment", price: "299" },
+    { name: "Sunset Cooler", desc: "Beautiful layered fruit cooler", price: "380" },
+    { name: "Kiwi Blue Some", desc: "Kiwi and blue curacao blend", price: "375" },
+    { name: "Passion Fruit", desc: "Exotic passion fruit cooler", price: "350" },
+    { name: "Twist Energy", desc: "Refreshing energy boost", price: "395" },
+    { name: "Masala Wine Sangria", desc: "Traditional sangria with a spicy twist", price: "340" },
+    { name: "Pina Colada", desc: "Classic coconut and pineapple blend", price: "280" },
+    { name: "Lemon Iced Tea / Peach Iced Tea", desc: "Refreshing iced tea options", price: "280" },
   ],
-  "Farali Special": [
-    { name: "Sabudana Tikki", desc: "Traditional sabudana tikkis served in portions of 3 pieces" },
-    { name: "Farali Sabudana Bhel", desc: "Special faralli-style sabudana bhel with crunchy mix" },
+  "Classic Pasta": [
+    { name: "Signature Rosé Rigatoni Pasta", desc: "Rich and creamy rosé sauce rigatoni", price: "450" },
+    { name: "Heirloom Gnocchi Pasta", desc: "Soft gnocchi with heirloom tomatoes", price: "470" },
+    { name: "Wild Alfredo Pasta", desc: "Creamy alfredo with wild mushrooms", price: "420" },
+    { name: "Portofino Mac 'n' Cheese Pasta", desc: "Gourmet mac and cheese", price: "460" },
   ],
-  "Nachos": [
-    { name: "Nachos Mexican", desc: "Crispy tortilla chips with authentic Mexican flavors" },
-    { name: "Nachos Cheesy", desc: "Crispy tortilla chips loaded with melted cheese" },
+  "Finger Bites": [
+    { name: "French Fries", desc: "Classic golden crispy fries", price: "190" },
+    { name: "Cheesy Fries", desc: "Fries loaded with melted cheese", price: "250" },
+    { name: "Peri Peri Fries", desc: "Spicy peri peri seasoned fries", price: "250" },
+    { name: "Potato Skin Fries", desc: "Crispy potato skins", price: "270" },
+  ],
+  "Quick Bites": [
+    { name: "Mexicano Nachos", desc: "Nachos with Mexican beans and salsa", price: "290" },
+    { name: "Guacamole Cheese Nachos", desc: "Nachos with fresh guacamole and cheese", price: "330" },
   ],
   "Garlic Bread": [
-    { name: "Garlic Bread", desc: "Toasted bread with aromatic garlic butter and herbs" },
-    { name: "Cheese Garlic Bread", desc: "Garlic bread topped with melted cheese" },
-    { name: "Cheese Garlic Bread Loaded", desc: "Heavily loaded garlic bread with extra cheese" },
+    { name: "Cheese Garlic Bread", desc: "Classic garlic bread with cheese", price: "330" },
+    { name: "Cheese Garlic Bread Loaded", desc: "Extra loaded garlic bread", price: "390" },
+    { name: "Italian Bruschetta", desc: "Traditional tomato and herb bruschetta", price: "430" },
   ],
-  "Snacks": [
-    { name: "Khakhra", desc: "Traditional Gujarati crispy flatbread served in 2 pieces (Jain)" },
-    { name: "Cookies", desc: "Fresh baked cookies served in portions of 4 pieces" },
-    { name: "Thepla", desc: "Spiced flatbread served in 2 pieces" },
-    { name: "Cheese Khakhra", desc: "Khakhra topped with cheese served in 2 pieces (Jain)" },
-    { name: "Masala Khakhra With Cheese", desc: "Spiced khakhra with cheese served in 2 pieces (Jain)" },
-    { name: "Maska Bun", desc: "Soft bun with butter and traditional flavors (Jain)" },
-    { name: "Samosa", desc: "Crispy fried samosas served in 2 pieces" },
-    { name: "Bread Butter", desc: "Simple bread with butter spread" },
-    { name: "Jam Bread Butter", desc: "Bread with butter and sweet jam (Jain)" },
-    { name: "Khari", desc: "Crispy puff pastry served in 5 pieces" },
-    { name: "Choco Bread Butter", desc: "Bread with butter and chocolate spread (Jain)" },
-    { name: "Poha", desc: "Traditional flattened rice preparation with spices" },
-    { name: "Biscuit Pai", desc: "Traditional biscuit preparation served in 6 pieces" },
+  "Eat Healthy Salads": [
+    { name: "Exotic Veggie with Herbs", desc: "Fresh mixed veggies with aromatic herbs", price: "320" },
+    { name: "Sunshine Tofu Salad", desc: "Bright tofu salad with fresh greens", price: "390" },
+    { name: "Tabbouleh Salad", desc: "Traditional Middle Eastern herb salad", price: "390" },
+    { name: "Steak Paneer with Sautéed Veggies", desc: "Grilled paneer steaks with vegetables", price: "410" },
+    { name: "Burrata Salad", desc: "Creamy burrata with fresh tomatoes", price: "450" },
+  ],
+  "Sandwich": [
+    { name: "Sauted Paneer Croissant Sandwich", desc: "Flaky croissant with sautéed paneer", price: "380" },
+    { name: "Chipotle Veggie Bagel Sandwich", desc: "Bagel with spicy chipotle veggies", price: "395" },
+    { name: "Pesto Bagel Sandwich", desc: "Bagel with fresh pesto and veggies", price: "400" },
+    { name: "Harissa Cottage Cheese Sandwich", desc: "Spicy harissa cottage cheese filling", price: "285" },
+  ],
+  "Rice Bowl": [
+    { name: "Veg Jambalaya Rice with Pepper Curry", desc: "Spiced jambalaya with pepper curry", price: "499" },
+    { name: "Thai Basil Cottage Cheese with Jasmine Rice", desc: "Aromatic Thai basil paneer with jasmine rice", price: "510" },
+    { name: "Spinach Rice with Thai Curry", desc: "Healthy spinach rice with rich Thai curry", price: "520" },
+    { name: "Mexican Rice with Hot Pepper Curry", desc: "Zesty Mexican rice with spicy curry", price: "499" },
+    { name: "Mexican Rice Platter", desc: "Complete Mexican rice meal", price: "540" },
+    { name: "Exotic Rice Platter", desc: "Chef's special rice selection", price: "565" },
+  ],
+  "On The Toast": [
+    { name: "Next Level Avocado Toast", desc: "Gourmet avocado mash on sourdough", price: "399" },
+    { name: "Scrambled Paneer Toast", desc: "Creamy scrambled paneer on toast", price: "389" },
+    { name: "Pesto Paneer Toast", desc: "Fresh pesto and paneer on toast", price: "375" },
+  ],
+  "Appetizer": [
+    { name: "Crispy Chestnut", desc: "Deep fried chestnuts with spices", price: "350" },
+    { name: "Korean Chili Lotus Stem", desc: "Lotus stems in spicy Korean chili sauce", price: "410" },
+    { name: "Kung Pao Cottage Cheese", desc: "Paneer in classic Kung Pao sauce", price: "385" },
+    { name: "Mediterranean Mezze Platter", desc: "Selection of Mediterranean bites", price: "430" },
+    { name: "Hummus Bowl", desc: "Creamy hummus served with pita", price: "499" },
+    { name: "Golden Arancini Balls", desc: "Crispy Italian rice balls", price: "399" },
+  ],
+  "Chinese": [
+    { name: "Korean Udon Noodles", desc: "Thick udon noodles in Korean spices", price: "390" },
+    { name: "Hakka Noodles", desc: "Classic veggie hakka noodles", price: "350" },
+    { name: "Burnt Garlic Noodles", desc: "Aromatic noodles with toasted garlic", price: "350" },
+    { name: "Pad Thai Noodles", desc: "Traditional Thai flat noodles", price: "370" },
+    { name: "Crispy Veg", desc: "Mixed vegetables fried to perfection", price: "290" },
+    { name: "Crispy Corn", desc: "Spiced crispy corn kernels", price: "290" },
+    { name: "Chilli Cottage Cheese", desc: "Paneer cubes in spicy chili sauce", price: "365" },
+  ],
+  "Sizzler": [
+    { name: "Mexican Sizzler", desc: "Sizzling platter with Mexican favorites", price: "590" },
+    { name: "Indo-Mex Sizzler", desc: "Fusion of Indian and Mexican flavors", price: "595" },
+    { name: "Chinese Sizzler", desc: "Sizzling Chinese delicacies", price: "525" },
+    { name: "Chef's Special Sizzler", desc: "Chef's selection on a sizzler", price: "620" },
+    { name: "CB Signature Sizzler", desc: "Our house signature sizzling experience", price: "650" },
+  ],
+  "CB Flatbreads (Pizza)": [
+    { name: "Marinara Pizza", desc: "Classic tomato and garlic flatbread", price: "410" },
+    { name: "Fiama Pizza", desc: "Spiced flatbread with spicy toppings", price: "450" },
+    { name: "Truffle Mushroom Bianco Pizza", desc: "White base with truffle and mushrooms", price: "480" },
+    { name: "Pesto Buffalo Pizza", desc: "Fresh pesto and buffalo mozzarella", price: "650" },
+    { name: "Tuscan Pizza", desc: "Traditional Tuscan style toppings", price: "670" },
+    { name: "Harvest Pizza", desc: "Loaded with seasonal harvest vegetables", price: "550" },
+    { name: "Roasted Tandoori Paneer Pizza", desc: "Fired with tandoori paneer and spices", price: "550" },
+    { name: "Asian Grilled Paneer Pizza", desc: "Unique Asian flavored paneer pizza", price: "599" },
   ],
   "Desserts": [
-    { name: "Chocolate Brownie w Cookie Crumble", desc: "Rich chocolate brownie topped with cookie crumble" },
-    { name: "Nutella Brownie w Cookie Crumble", desc: "Decadent Nutella brownie with cookie crumble topping" },
-    { name: "Biscoff Brownie w Cookie Crumble", desc: "Biscoff flavored brownie with cookie crumble" },
-    { name: "Chocolate Brownie", desc: "Classic rich chocolate brownie" },
-    { name: "Nutella Brownie", desc: "Indulgent Nutella chocolate brownie" },
-    { name: "Biscoff Brownie", desc: "Signature Biscoff flavored brownie" },
-    { name: "Cheese Cake", desc: "Creamy cheesecake available in Biscoff, Nutella, or Strawberry" },
-    { name: "Add On Ice Cream", desc: "Vanilla ice cream to complement any dessert" },
-  ],
-  "Cold Beverages": [
-    { name: "Cold Drink", desc: "Refreshing carbonated soft drinks" },
-    { name: "Water Bottle", desc: "Pure drinking water bottle" },
-    { name: "Red Bull", desc: "Energy drink for instant boost" },
+    { name: "Pistachio Cheese Cake", desc: "Delicate pistachio flavored cheesecake", price: "450" },
+    { name: "Tiramisu", desc: "Classic Italian coffee-layered dessert", price: "340" },
+    { name: "Sizzling Hot Brownie", desc: "Warm brownie on a sizzler with syrup", price: "295" },
+    { name: "Cheesecake", desc: "Nutella/Biscoff/Strawberry/Blueberry", price: "370" },
   ],
 };
 
 const MenuPage = () => {
-  const [active, setActive] = useState("Tea With Milk");
+  const [active, setActive] = useState("Speciality Coffee");
 
   return (
     <>
@@ -181,11 +199,10 @@ const MenuPage = () => {
                 <button
                   key={tab}
                   onClick={() => setActive(tab)}
-                  className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${
-                    active === tab
-                      ? "bg-gradient-accent text-foreground shadow-accent"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
-                  }`}
+                  className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${active === tab
+                    ? "bg-gradient-accent text-foreground shadow-accent"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
+                    }`}
                 >
                   {tab}
                 </button>
@@ -232,7 +249,12 @@ const MenuPage = () => {
                           </div>
                         )}
 
-                        <h3 className="font-display text-xl font-bold text-foreground mb-2 relative z-10">{item.name}</h3>
+                        <div className="flex justify-between items-start mb-2 relative z-10">
+                          <h3 className="font-display text-xl font-bold text-foreground">{item.name}</h3>
+                          {item.price && (
+                            <span className="font-display text-lg font-bold text-primary">₹{item.price}</span>
+                          )}
+                        </div>
                         <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{item.desc}</p>
 
                         {/* Bottom decorative glow */}

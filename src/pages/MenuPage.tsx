@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const tabs = [
-  "Tea With Milk", "Tea Without Milk", "More Than Tea", "Iced Tea",
-  "Hot Coffee", "Cold Coffee", "Iced Coffee", "Mocktails",
-  "Shakes", "Pizza (9 inch)", "Pasta", "Sandwiches",
-  "Noodles", "Fries", "Farali Special", "Nachos",
+  "Tea With Milk", "Tea Without Milk", "More Than Tea", "Iced Tea", 
+  "Hot Coffee", "Cold Coffee", "Iced Coffee", "Mocktails", 
+  "Shakes", "Pizza (9 inch)", "Pasta", "Sandwiches", 
+  "Noodles", "Fries", "Farali Special", "Nachos", 
   "Garlic Bread", "Snacks", "Desserts", "Cold Beverages"
 ];
 
@@ -180,10 +181,11 @@ const MenuPage = () => {
                 <button
                   key={tab}
                   onClick={() => setActive(tab)}
-                  className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${active === tab
+                  className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${
+                    active === tab
                       ? "bg-gradient-accent text-foreground shadow-accent"
                       : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
-                    }`}
+                  }`}
                 >
                   {tab}
                 </button>
@@ -222,10 +224,15 @@ const MenuPage = () => {
                         {/* Accent bar */}
                         <div className="mb-5 h-1 w-10 rounded-full bg-gradient-to-r from-primary to-accent group-hover:w-16 transition-all duration-300" />
 
-                        <div className="flex justify-between items-start gap-4 mb-2 relative z-10">
-                          <h3 className="font-display text-xl font-bold text-foreground">{item.name}</h3>
-                          <span className="font-display font-bold text-primary whitespace-nowrap">₹{item.price}</span>
-                        </div>
+                        {/* Tag/Badge */}
+                        {item.tag && (
+                          <div className="mb-4 flex items-center gap-1.5 rounded-full bg-accent/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white w-fit shadow-sm">
+                            <Star className="h-3 w-3 fill-current" />
+                            {item.tag}
+                          </div>
+                        )}
+
+                        <h3 className="font-display text-xl font-bold text-foreground mb-2 relative z-10">{item.name}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{item.desc}</p>
 
                         {/* Bottom decorative glow */}

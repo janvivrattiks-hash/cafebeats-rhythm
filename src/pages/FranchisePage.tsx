@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionTitle from "@/components/SectionTitle";
 import { GraduationCap, Megaphone, Palette, Heart, Users, MapPin, Lightbulb, Send, Check, Star, Eye } from "lucide-react";
 import { toast } from "sonner";
-import store1 from "@/assets/store-1.jpg";
+import store1 from "@/assets/store-1.webp";
 
 const supports = [
   { icon: Heart, title: "Genuine Commitments", desc: "Our promise of transparency and long-term partnership" },

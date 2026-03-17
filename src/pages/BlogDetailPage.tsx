@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, User, Share2, Facebook, Instagram } from "lucide-react";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import hero1 from "@/assets/hero-1.webp";
+import hero2 from "@/assets/hero-2.webp";
+import hero3 from "@/assets/hero-3.webp";
 
 const blogPosts = [
   { 

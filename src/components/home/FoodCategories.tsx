@@ -6,22 +6,22 @@ const reels = [
   {
     id: 1,
     title: "Latte Art Magic ☕✨",
-    videoUrl: "/our-delicious-food-1.MOV"
+    videoUrl: "/our-delicious-food-1.webm"
   },
   {
     id: 2,
     title: "Morning Vibes at CafeBeats 🌅",
-    videoUrl: "/our-delicious-food-2.MOV"
+    videoUrl: "/our-delicious-food-2.webm"
   },
   {
     id: 3,
     title: "Our Signature Cold Brew 🧊",
-    videoUrl: "/our-delicious-food-3.MOV"
+    videoUrl: "/our-delicious-food-3.webm"
   },
   {
     id: 4,
     title: "Delicious Bites 🍕✨",
-    videoUrl: "/our-delicious-food-4.MOV"
+    videoUrl: "/our-delicious-food-4.webm"
   },
 ];
 

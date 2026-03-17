@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionTitle from "@/components/SectionTitle";
 import { Eye, Target, Heart, Lightbulb, Users, Star } from "lucide-react";
-import hero2 from "@/assets/hero-2.jpg";
-import store2 from "@/assets/store-2.jpg";
+import hero2 from "@/assets/hero-2.webp";
+import store2 from "@/assets/store-2.webp";
 
 const timeline = [
   { year: "2022", event: "Brand Started – First CafeBeats café opened in Mumbai" },

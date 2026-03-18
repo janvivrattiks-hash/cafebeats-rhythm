@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -170,6 +170,15 @@ const menuData: Record<string, { name: string; desc: string; tag?: string; price
 
 const MenuPage = () => {
   const [active, setActive] = useState("Speciality Coffee");
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollTo = direction === "left" ? scrollLeft - 200 : scrollLeft + 200;
+      scrollContainerRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -193,20 +202,46 @@ const MenuPage = () => {
 
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4 md:px-8">
-            {/* Tab Bar */}
-            <div className="sticky top-20 z-30 mb-16 flex flex-wrap justify-center gap-4 bg-background/80 py-4 backdrop-blur-md">
-              {tabs.map((tab) => (
+            {/* Tab Bar with Arrows */}
+            <div className="sticky top-20 z-30 mb-16 bg-background/80 backdrop-blur-md py-4">
+              <div className="relative group/tabs flex items-center">
+                {/* Left Arrow */}
                 <button
-                  key={tab}
-                  onClick={() => setActive(tab)}
-                  className={`rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 ${active === tab
-                    ? "bg-gradient-accent text-foreground shadow-accent"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
-                    }`}
+                  onClick={() => scroll("left")}
+                  className="absolute left-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
+                  aria-label="Scroll left"
                 >
-                  {tab}
+                  <ChevronLeft className="h-5 w-5" />
                 </button>
-              ))}
+
+                {/* Tabs Container */}
+                <div
+                  ref={scrollContainerRef}
+                  className="flex w-full gap-4 overflow-x-auto px-4 scrollbar-hide flex-nowrap md:flex-wrap md:justify-center"
+                >
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActive(tab)}
+                      className={`whitespace-nowrap rounded-full px-8 py-2.5 font-display text-sm font-bold transition-all duration-300 transform hover:scale-105 flex-shrink-0 ${active === tab
+                        ? "bg-gradient-accent text-foreground shadow-accent"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80 border border-border"
+                        }`}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={() => scroll("right")}
+                  className="absolute right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
             </div>
 
             <AnimatePresence mode="wait">
@@ -250,9 +285,9 @@ const MenuPage = () => {
                         )}
 
                         <div className="flex justify-between items-start mb-2 relative z-10">
-                          <h3 className="font-display text-xl font-bold text-foreground">{item.name}</h3>
+                          <h3 className="font-display text-lg md:text-xl font-bold text-foreground">{item.name}</h3>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{item.desc}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed relative z-10">{item.desc}</p>
 
                         {/* Bottom decorative glow */}
                         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/0 via-accent/50 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

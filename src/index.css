@@ -84,3 +84,11 @@
 .shadow-accent {
   box-shadow: 0 10px 30px rgba(193, 154, 107, 0.2);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

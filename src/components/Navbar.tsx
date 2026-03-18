@@ -93,7 +93,7 @@ const Navbar = () => {
                     <Link
                       key={link.path}
                       to={link.path}
-                      className={`flex items-center gap-3 font-display text-2xl font-bold transition-all duration-300 ${
+                      className={`flex items-center gap-3 font-display text-lg font-bold transition-all duration-300 ${
                         isActive 
                           ? "text-accent pl-6 border-l-4 border-accent bg-accent/5 py-2" 
                           : "text-white/70 pl-0 py-2 hover:text-white"

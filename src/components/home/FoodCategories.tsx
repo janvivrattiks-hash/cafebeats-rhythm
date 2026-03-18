@@ -16,7 +16,7 @@ const reels = [
   {
     id: 3,
     title: "Winter Reel",
-    videoUrl: "/CB Winter Reel .webm"
+    videoUrl: "/CB Winter Reel.webm"
   },
 ];
 

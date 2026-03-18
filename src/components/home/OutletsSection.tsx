@@ -5,7 +5,7 @@ import SectionTitle from "../SectionTitle";
 const outlets = [
   { image: "/sarthana.webp", city: "Sarthana - Surat", address: "Surat, Gujarat" },
   { image: "/varachha.webp", city: "Mota Varachha - Surat", address: "Surat, Gujarat" },
-  { image: "/mumbai.webp", city: "Mumbai", address: "Mumbai, Maharashtra" },
+  { image: "/Vapi.webp", city: "Vapi", address: "Vapi, Gujarat" },
 ];
 
 const OutletsSection = () => (

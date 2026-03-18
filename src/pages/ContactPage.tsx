@@ -12,7 +12,7 @@ const ContactPage = () => {
       <Navbar />
 
       <section className="relative flex h-[50vh] min-h-[400px] items-center justify-center overflow-hidden">
-        <img src="/banner-3.webp" alt="Contact Us" className="absolute inset-0 h-full w-full object-cover" />
+        <img src="/banner-5.webp" alt="Contact Us" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
         <div className="container relative z-10 mx-auto px-4 text-center md:px-8">
           <motion.div
@@ -56,7 +56,13 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg">Our Location</h4>
-                      <p className="text-muted-foreground">G-11 Blue Stone Building, Shyamdham MandirChowk, Sarthana Jakat Naka, Surat, Gujarat 395013</p>
+                      <p className="text-muted-foreground">
+                        ICON RIO<br />
+                        707- 7 th floor<br />
+                        CAFEBEATS IND PVT LTD<br />
+                        PIPLOD<br />
+                        SURAT
+                      </p>
                     </div>
                   </div>
 
@@ -79,7 +85,7 @@ const ContactPage = () => {
                     <div>
                       <h4 className="font-semibold text-lg">Email Address</h4>
                       <p className="text-muted-foreground">
-                        <a href="mailto:info@cafebeats.in" className="hover:text-accent transition-colors">info@cafebeats.in</a>
+                        <a href="mailto:Cafebeats2018@gmail.com" className="hover:text-accent transition-colors">Cafebeats2018@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -98,17 +104,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="h-[300px] w-full bg-card rounded-3xl overflow-hidden shadow-warm transition-all duration-500 border border-border/50">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14875.947687777123!2d72.894858406842!3d21.23236718749165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0454de94c5a45%3A0xf682be781d2bad16!2sCafe%20Beats%20Restaurant!5e0!3m2!1sen!2sin!4v1773332653132!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
-              </div>
+
             </motion.div>
 
             {/* Contact Form */}

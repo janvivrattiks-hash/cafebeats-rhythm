@@ -8,10 +8,10 @@ import hero2 from "@/assets/hero-2.webp";
 import store2 from "@/assets/store-2.webp";
 
 const timeline = [
-  { year: "2022", event: "Brand Started – First CafeBeats café opened in Mumbai" },
-  { year: "2023", event: "10 Stores – Expanded across 5 major cities" },
-  { year: "2024", event: "25 Stores – Launched franchise model" },
-  { year: "2025", event: "50+ Stores – Pan-India presence achieved" },
+  { year: "2018", event: "Brand Launch – Opened our first flagship store in Surat, Gujarat" },
+  { year: "2020", event: "Steady Growth – Successfully expanded to 2 operational stores" },
+  { year: "2022", event: "Rising Rhythm – Reached a milestone of 4 flourishing outlets" },
+  { year: "2025", event: "Future Vision – Expanding the beat to 8 premium locations" },
 ];
 
 const values = [

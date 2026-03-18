@@ -45,21 +45,30 @@ const Footer = () => {
           <div className="lg:justify-self-end">
             <h4 className="mb-4 font-display text-lg font-semibold">Contact Us</h4>
             <div className="space-y-3 text-sm text-white/70">
-              <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> G-11 Blue Stone Building, Shyamdham MandirChowk, Sarthana Jakat Naka, Surat, Gujarat 395013</div>
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> 
+                <div>
+                  ICON RIO<br />
+                  707- 7 th floor<br />
+                  CAFEBEATS IND PVT LTD<br />
+                  PIPLOD<br />
+                  SURAT
+                </div>
+              </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-accent" /> 
                 <a href="tel:+919924574894" className="transition-colors hover:text-accent">+91 99245 74894</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-accent" /> 
-                <a href="mailto:info@cafebeats.in" className="transition-colors hover:text-accent">info@cafebeats.in</a>
+                <a href="mailto:Cafebeats2018@gmail.com" className="transition-colors hover:text-accent">Cafebeats2018@gmail.com</a>
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-white/50">
-          © {new Date().getFullYear()} CafeBeats. All rights reserved.
+          © {new Date().getFullYear()} CafeBeats. All rights reserved. | Made by <a href="https://www.vrattiks.io/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light transition-colors font-medium">Vrattiks</a>
         </div>
       </div>
     </footer>

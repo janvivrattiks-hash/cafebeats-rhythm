@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Navigation, ArrowRight } from "lucide-react";
+import { MapPin, Navigation, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionTitle from "@/components/SectionTitle";
 const stores = [
-  { name: "Mota Varachha - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/varachha.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Mota+Varachha,+Surat" },
-  { name: "Dumas - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Dumas.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Arena+Dumas+Road,+Surat" },
-  { name: "Mumbai", address: "Mumbai, Maharashtra", phone: "+91 99245 74894", image: "/mumbai.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Bandra+Mumbai" },
-  { name: "Piplod - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Piplod.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Piplod,+Surat" },
-  { name: "Khadki (NH-48)", address: "NH-48, Gujarat", phone: "+91 99245 74894", image: "/Khadki(NH-48).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Khadki,+NH-48" },
-  { name: "Sarthana - Surat", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/sarthana.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Sarthana+Jakat+Naka,+Surat" },
-  { name: "Vapi", address: "Vapi, Gujarat", phone: "+91 99245 74894", image: "/Vapi.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Vapi,+Gujarat" },
-  { name: "Vadodara", address: "Vadodara, Gujarat", phone: "+91 99245 74894", image: "/Vadodara.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Akota,+Vadodara" },
-  { name: "Navsari", address: "Navsari, Gujarat", phone: "+91 99245 74894", image: "/Navsari.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Navsari,+Gujarat" },
-  { name: "Hajira-Ghogha Roao Ferry", address: "Multiple Outlets, Gujarat", phone: "+91 99245 74894", image: "/HAJIRA-GHOGHA ROAO FERRY (MULTIPLE OUTLETS).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Hajira+Ghogha+Ferry" },
-  { name: "Daman", address: "Daman, India", phone: "+91 99245 74894", image: "/Daman.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Dabhel,+Daman" },
-  { name: "Anthem Circle", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Anthem-circle.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Anthem+Circle,+Surat" },
-  { name: "Pal-Adajan", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/Pal-Adajan.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Pal-Adajan,+Surat" },
-  { name: "Katargam", address: "Surat, Gujarat", phone: "+91 99245 74894", image: "/katargam.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Katargam,+Surat" },
-  { name: "Rajkot", address: "Rajkot, Gujarat", phone: "+91 99245 74894", image: "/rajkot.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Kalavad+Road,+Rajkot" },
-  { name: "IIT Indore(Madhya Pradesh)", address: "Indore, Madhya Pradesh", phone: "+91 99245 74894", image: "/sarthana.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+IIT+Indore" },
+  { name: "Mota Varachha - Surat", address: "Surat, Gujarat", image: "/varachha.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Mota+Varachha,+Surat" },
+  { name: "Dumas - Surat", address: "Surat, Gujarat", image: "/Dumas.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Arena+Dumas+Road,+Surat" },
+  { name: "Piplod - Surat", address: "Surat, Gujarat", image: "/Piplod.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Piplod,+Surat" },
+  { name: "Khadki (NH-48)", address: "NH-48, Gujarat", image: "/Khadki(NH-48).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Khadki,+NH-48" },
+  { name: "Sarthana - Surat", address: "Surat, Gujarat", image: "/sarthana.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Sarthana+Jakat+Naka,+Surat" },
+  { name: "Vapi", address: "Vapi, Gujarat", image: "/Vapi.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Vapi,+Gujarat" },
+  { name: "Vadodara", address: "Vadodara, Gujarat", image: "/Vadodara.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Akota,+Vadodara" },
+  { name: "Navsari", address: "Navsari, Gujarat", image: "/Navsari.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Navsari,+Gujarat" },
+  { name: "Hajira-Ghogha Roao Ferry", address: "Multiple Outlets, Gujarat", image: "/HAJIRA-GHOGHA ROAO FERRY (MULTIPLE OUTLETS).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Hajira+Ghogha+Ferry" },
+  { name: "Daman", address: "Daman, India", image: "/Daman.webp", mapUrl: "https://www.google.com/maps/search/Cafe+Beats+Dabhel,+Daman" },
+  { name: "Anthem Circle", address: "Surat, Gujarat", image: "/Anthem-circle.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Anthem+Circle,+Surat" },
+  { name: "Pal-Adajan", address: "Surat, Gujarat", image: "/Pal-Adajan.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Pal-Adajan,+Surat" },
+  { name: "Katargam", address: "Surat, Gujarat", image: "/katargam.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Katargam,+Surat" },
+  { name: "Rajkot", address: "Rajkot, Gujarat", image: "/rajkot.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Kalavad+Road,+Rajkot" },
+  { name: "IIT Indore(Madhya Pradesh)", address: "Indore, Madhya Pradesh", image: "/IIT Indore(Madhya Pradesh).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+IIT+Indore" },
 ];
 
 const StoresPage = () => (
@@ -60,10 +59,6 @@ const StoresPage = () => (
                     <h3 className="font-display text-xl font-bold text-foreground">{s.name}</h3>
                     <p className="mt-2 flex items-start gap-1.5 text-sm text-muted-foreground">
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> {s.address}
-                    </p>
-                    <p className="mt-1.5 flex items-center gap-1.5 text-sm text-muted-foreground">
-                      <Phone className="h-4 w-4 shrink-0 text-accent" /> 
-                      <a href={`tel:${s.phone.replace(/\s+/g, '')}`} className="hover:text-accent transition-colors">{s.phone}</a>
                     </p>
                     <a
                       href={s.mapUrl}

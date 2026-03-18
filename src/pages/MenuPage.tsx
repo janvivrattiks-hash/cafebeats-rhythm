@@ -251,9 +251,6 @@ const MenuPage = () => {
 
                         <div className="flex justify-between items-start mb-2 relative z-10">
                           <h3 className="font-display text-xl font-bold text-foreground">{item.name}</h3>
-                          {item.price && (
-                            <span className="font-display text-lg font-bold text-primary">₹{item.price}</span>
-                          )}
                         </div>
                         <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{item.desc}</p>
 

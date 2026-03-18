@@ -30,7 +30,7 @@ const blogPosts = [
     title: "CafeBeats Opens 50th Store", 
     desc: "We're absolutely thrilled to celebrate a major milestone in our journey—the opening of our 50th store! This achievement wouldn't have been possible without our amazing community.",
     content: `
-      From a single, cozy corner in Mumbai to 50 locations across India, the CafeBeats rhythm has spread far and wide. Our 50th store, located in the heart of Surat, represents everything we stand for: premium quality, modern design, and a place where music and coffee come together.
+      From a single, cozy corner in Surat to 50 locations across India, the CafeBeats rhythm has spread far and wide. Our 50th store, located in the heart of Surat, represents everything we stand for: premium quality, modern design, and a place where music and coffee come together.
       
       "This is just the beginning," says our founder during the ribbon-cutting ceremony. "Our goal has always been to be more than just a coffee shop; we want to be a part of people's daily lives and special moments." 
       

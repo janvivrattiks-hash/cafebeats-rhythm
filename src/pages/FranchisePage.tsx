@@ -250,74 +250,7 @@ const FranchisePage = () => {
             </ScrollReveal>
           </div>
         </section>
-        {/* ROI Section */}
-        <section className="py-24 md:py-36 bg-background relative overflow-hidden">
-          <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <div className="text-center mb-16">
-              <ScrollReveal>
-                <div className="inline-block rounded-full bg-accent/10 px-4 py-1.5 mb-4 text-xs font-bold uppercase tracking-widest text-accent border border-accent/20">
-                  Financial Projections
-                </div>
-                <h2 className="font-display text-4xl font-bold text-foreground md:text-6xl mb-6">Return on Investment (ROI)</h2>
-                <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-                  Explore our comprehensive financial projections based on different growth scenarios.
-                </p>
-              </ScrollReveal>
-            </div>
-            
-            <div className="mt-8 overflow-x-auto rounded-[2rem] border border-border bg-card shadow-2xl">
-              <table className="w-full text-left border-collapse min-w-[900px]">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="p-8 font-display text-xl font-bold text-foreground border-r border-border w-1/4">Metric</th>
-                    <th className="p-8 font-display text-xl font-bold text-center border-r border-border text-muted-foreground">Conservative</th>
-                    <th className="p-8 font-display text-xl font-bold text-center border-r border-border text-accent">Moderate</th>
-                    <th className="p-8 font-display text-xl font-bold text-center bg-accent/5 text-accent relative">
-                      Optimistic
-                      <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-[10px] bg-accent text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Growth</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {[
-                    { label: "Avg. Daily Order", cons: "50", mod: "80", opt: "100" },
-                    { label: "Avg. Billing Size", cons: "400", mod: "525", opt: "650" },
-                    { label: "Avg. Daily Sales", cons: "20,000", mod: "42,000", opt: "65,000" },
-                    { label: "Total Monthly Sales", cons: "6,00,000", mod: "12,60,000", opt: "19,50,000" },
-                    { label: "Gross Profit (60%)", cons: "3,60,000", mod: "7,56,000", opt: "11,70,000" },
-                    { label: "Fixed Cost", cons: "", mod: "", opt: "", isHeader: true },
-                    { label: "Rent", cons: "80,000", mod: "1,20,000", opt: "1,80,000" },
-                    { label: "Staff Salary", cons: "75,000", mod: "1,50,000", opt: "2,50,000" },
-                    { label: "Electricity", cons: "15,000", mod: "30,000", opt: "40,000" },
-                    { label: "Man Power Accommodation", cons: "10,000", mod: "15,000", opt: "20,000" },
-                    { label: "Marketing & Other Expenses", cons: "20,000", mod: "30,000", opt: "40,000" },
-                    { label: "Royalty (5%)", cons: "30,000", mod: "63,000", opt: "97,500" },
-                  ].map((row, idx) => (
-                    <tr key={idx} className={`group hover:bg-muted/30 transition-colors ${row.isHeader ? "bg-muted/50" : ""}`}>
-                      <td className={`p-5 pl-8 font-medium border-r border-border ${row.isHeader ? "text-accent font-bold uppercase tracking-wider text-sm" : "text-foreground/80"}`}>
-                        {row.label}
-                      </td>
-                      {!row.isHeader && (
-                        <>
-                          <td className="p-5 text-center text-muted-foreground border-r border-border">{row.cons}</td>
-                          <td className="p-5 text-center text-foreground border-r border-border">{row.mod}</td>
-                          <td className="p-5 text-center text-accent font-bold bg-accent/[0.02]">{row.opt}</td>
-                        </>
-                      )}
-                      {row.isHeader && <td className="p-5" colSpan={3}></td>}
-                    </tr>
-                  ))}
-                  <tr className="bg-accent/10 border-t-2 border-accent/20">
-                    <td className="p-8 font-display text-2xl font-bold text-foreground border-r border-border">Monthly Returns</td>
-                    <td className="p-8 text-center font-display text-2xl font-bold text-muted-foreground border-r border-border">₹1,30,000</td>
-                    <td className="p-8 text-center font-display text-3xl font-bold text-accent border-r border-border">₹3,48,000</td>
-                    <td className="p-8 text-center font-display text-4xl font-bold text-accent">₹5,42,500</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+
 
         {/* Vision */}
         <section className="bg-gradient-dark py-20 md:py-28">

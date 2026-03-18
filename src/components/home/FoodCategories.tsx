@@ -6,7 +6,7 @@ const reels = [
   {
     id: 1,
     title: "Delicious Food 1",
-    videoUrl: "/our-delicious-food-1webm"
+    videoUrl: "/our-delicious-food-1.webm"
   },
   {
     id: 2,

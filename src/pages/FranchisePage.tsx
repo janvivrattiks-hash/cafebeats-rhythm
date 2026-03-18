@@ -253,12 +253,14 @@ const FranchisePage = () => {
 
 
         {/* Vision */}
-        <section className="bg-gradient-dark py-20 md:py-28">
-          <div className="container mx-auto px-4 text-center md:px-8">
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <img src="/banner-5.webp" alt="Vision Background" className="absolute inset-0 h-full w-full object-cover fixed-attachment" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90" />
+          <div className="container relative z-10 mx-auto px-4 text-center md:px-8">
             <ScrollReveal>
-              <Eye className="mx-auto mb-4 h-12 w-12 text-accent" />
-              <h2 className="font-display text-3xl font-bold text-white md:text-4xl">Our Vision</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-white/70">
+              <Eye className="mx-auto mb-6 h-16 w-16 text-accent" />
+              <h2 className="font-display text-4xl font-bold text-white md:text-5xl">Our Vision</h2>
+              <p className="mx-auto mt-8 max-w-3xl text-lg text-white/80 md:text-xl leading-relaxed">
                 To establish CafeBeats as India's most loved café brand with 500+ outlets by 2028, 
                 creating thousands of jobs and building a community of coffee enthusiasts.
               </p>

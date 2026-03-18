@@ -2,9 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+
 
 const ContactPage = () => {
   return (
@@ -142,28 +140,28 @@ const ContactPage = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Full Name</label>
-                    <Input name="name" required placeholder="John Doe" className="bg-background/50 border-border focus:ring-accent" />
+                    <input name="name" required placeholder="John Doe" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email Address</label>
-                    <Input name="email" type="email" required placeholder="john@example.com" className="bg-background/50 border-border focus:ring-accent" />
+                    <input name="email" type="email" required placeholder="john@example.com" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Subject</label>
-                  <Input name="subject" required placeholder="How can we help?" className="bg-background/50 border-border focus:ring-accent" />
+                  <input name="subject" required placeholder="How can we help?" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Message</label>
-                  <Textarea name="message" required placeholder="Type your message here..." className="min-h-[150px] bg-background/50 border-border focus:ring-accent" />
+                  <textarea name="message" required placeholder="Type your message here..." className="flex min-h-[150px] w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
 
-                <Button type="submit" className="w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all">
+                <button type="submit" className="inline-flex items-center justify-center w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all">
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
+                </button>
               </form>
             </motion.div>
           </div>

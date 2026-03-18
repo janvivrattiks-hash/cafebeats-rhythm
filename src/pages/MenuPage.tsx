@@ -208,16 +208,16 @@ const MenuPage = () => {
                 {/* Left Arrow */}
                 <button
                   onClick={() => scroll("left")}
-                  className="absolute left-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
+                  className="absolute left-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
                   aria-label="Scroll left"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  <ChevronLeft className="h-4 w-4" />
                 </button>
 
                 {/* Tabs Container */}
                 <div
                   ref={scrollContainerRef}
-                  className="flex w-full gap-4 overflow-x-auto px-4 scrollbar-hide flex-nowrap md:flex-wrap md:justify-center"
+                  className="flex w-full gap-4 overflow-x-auto px-10 scrollbar-hide flex-nowrap md:flex-wrap md:justify-center"
                 >
                   {tabs.map((tab) => (
                     <button
@@ -236,10 +236,10 @@ const MenuPage = () => {
                 {/* Right Arrow */}
                 <button
                   onClick={() => scroll("right")}
-                  className="absolute right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
+                  className="absolute right-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 border border-border shadow-warm text-foreground transition-all duration-300 md:hidden"
                   aria-label="Scroll right"
                 >
-                  <ChevronRight className="h-5 w-5" />
+                  <ChevronRight className="h-4 w-4" />
                 </button>
               </div>
             </div>

@@ -27,7 +27,7 @@ const Chatbot = () => {
       },
       initialMessages: [
         'Hi there! 👋 Welcome to CafeBeats.',
-        'How can I help you today with our menu, store locations, or franchise inquiries?'
+        'How can I help you today with our menu, store locations?'
       ],
     });
   }, []);

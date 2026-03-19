@@ -1,11 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import '@n8n/chat/style.css';
 import { createChat } from '@n8n/chat';
 
 const Chatbot = () => {
+  const isInitialized = useRef(false);
+
   useEffect(() => {
+    if (isInitialized.current) return;
+    isInitialized.current = true;
+
     createChat({
-      webhookUrl: `${window.location.origin}/webhook/5bd5144f-4809-419c-8ad0-d31d60175e02/chat`,
+      webhookUrl: 'https://jahnvivrattiks.app.n8n.cloud/webhook/5bd5144f-4809-419c-8ad0-d31d60175e02/chat',
       mode: 'window',
       showWelcomeScreen: true,
       chatInputKey: 'chatInput',
@@ -14,6 +19,7 @@ const Chatbot = () => {
       metadata: {
         source: 'website',
         page: window.location.pathname,
+        origin: window.location.origin,
       },
       i18n: {
         en: {

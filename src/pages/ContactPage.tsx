@@ -92,10 +92,10 @@ const ContactPage = () => {
                 <div className="mt-12">
                   <h4 className="font-semibold mb-4">Follow Us</h4>
                   <div className="flex gap-4">
-                    <a href="https://www.instagram.com/cafebeats.india/profilecard/?igsh=MW54dGJldTJscWhsOQ" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-gradient-premium hover:text-white transition-all duration-300">
+                    <a href="https://www.instagram.com/cafebeats.india/profilecard/?igsh=MW54dGJldTJscWhsOQ" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-black hover:text-white transition-all duration-300">
                       <Instagram className="h-5 w-5" />
                     </a>
-                    <a href="https://www.facebook.com/cafebeats.restaurant" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-gradient-premium hover:text-white transition-all duration-300">
+                    <a href="https://www.facebook.com/cafebeats.restaurant" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary hover:bg-black hover:text-white transition-all duration-300">
                       <Facebook className="h-5 w-5" />
                     </a>
                   </div>
@@ -116,7 +116,7 @@ const ContactPage = () => {
 
               <h3 className="font-display text-2xl font-bold mb-8">Send Us a Message</h3>
 
-              <form 
+              <form
                 className="space-y-6"
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -125,7 +125,7 @@ const ContactPage = () => {
                   const email = formData.get('email');
                   const subject = formData.get('subject');
                   const message = formData.get('message');
-                  
+
                   const whatsappMessage = encodeURIComponent(
                     `*New Contact Inquiry*\n\n` +
                     `*Name:* ${name}\n` +
@@ -133,7 +133,7 @@ const ContactPage = () => {
                     `*Subject:* ${subject}\n` +
                     `*Message:* ${message}`
                   );
-                  
+
                   window.open(`https://wa.me/919924574894?text=${whatsappMessage}`, '_blank');
                 }}
               >

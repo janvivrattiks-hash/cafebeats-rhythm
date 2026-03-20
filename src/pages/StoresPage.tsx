@@ -20,7 +20,7 @@ const stores = [
   { name: "Pal-Adajan", address: "Surat, Gujarat", image: "/Pal-Adajan.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Pal-Adajan,+Surat" },
   { name: "Katargam", address: "Surat, Gujarat", image: "/katargam.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Katargam,+Surat" },
   { name: "Rajkot", address: "Rajkot, Gujarat", image: "/rajkot.webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+Kalavad+Road,+Rajkot" },
-  { name: "IIT Indore(Madhya Pradesh)", address: "Indore, Madhya Pradesh", image: "/IIT Indore(Madhya Pradesh).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+IIT+Indore" },
+  { name: "IIT Indore (Madhya Pradesh)", address: "IIT Indore, Madhya Pradesh", image: "/IIT Indore(Madhya Pradesh).webp", mapUrl: "https://www.google.com/maps/search/CafeBeats+IIT+Indore+Simrol" },
 ];
 
 const StoresPage = () => (

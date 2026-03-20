@@ -10,8 +10,8 @@ import store2 from "@/assets/store-2.webp";
 const timeline = [
   { year: "2018", event: "Brand Launch – Opened our first flagship store in Surat, Gujarat" },
   { year: "2020", event: "Steady Growth – Successfully expanded to 2 operational stores" },
-  { year: "2022", event: "Rising Rhythm – Reached a milestone of 4 flourishing outlets" },
-  { year: "2025", event: "Future Vision – Expanding the beat to 8 premium locations" },
+  { year: "2022", event: "Rising Rhythm – Reached a milestone of 6 flourishing outlets" },
+  { year: "2025", event: "Future Vision – Expanding the beat to 15+ premium locations" },
 ];
 
 const values = [

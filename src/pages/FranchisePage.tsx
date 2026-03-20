@@ -148,7 +148,6 @@ const FranchisePage = () => {
                 <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6 text-left">
                   {[
                     "Man power support.",
-                    "Social media postings and designing support.",
                     "Raw Material Management And Supply Support.",
                     "Monthly Visits of Company Operation Manager.",
                     "Staff Work Audit Regularly.",
@@ -261,7 +260,7 @@ const FranchisePage = () => {
               <Eye className="mx-auto mb-6 h-16 w-16 text-accent" />
               <h2 className="font-display text-4xl font-bold text-white md:text-5xl">Our Vision</h2>
               <p className="mx-auto mt-8 max-w-3xl text-lg text-white/80 md:text-xl leading-relaxed">
-                To establish CafeBeats as India's most loved café brand with 500+ outlets by 2028, 
+                To establish CafeBeats as India's most loved café brand with 500+ outlets by 2030, 
                 creating thousands of jobs and building a community of coffee enthusiasts.
               </p>
             </ScrollReveal>

@@ -62,12 +62,12 @@ const AboutPage = () => (
             >
               <h2 className="mb-4 font-display text-3xl font-bold md:text-5xl">About Cafe Beats</h2>
               <div className="space-y-4 text-base leading-relaxed">
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-justify">
                   CafeBeats is a chain of progressive, themed cafés founded by Dr. Mahesh Khunt and Mr. Shailesh Kheni in 2018. With a shared vision rooted in hospitality, we create destinations where people enjoy fine food, music, and leisure.
                 </p>
                 <h3 className="mb-4 font-display text-3xl font-bold md:text-5xl">Growth Plan</h3>
-                <p className="text-muted-foreground capitalize">
-                  With A Slow Yet Sustainablerate , Brand Cafebeats Is Growing Well . All The 6 Outlets Are Operational And Are The Most Liked Outlets In The Locality. As Per The Vision 2022, Cafe Beats Is Planning To Reach 20 Outlets Across India With Upcoming Outlets Of Surat , Anand, Ahmedabad, Daman, Navsari,
+                <p className="text-muted-foreground capitalize text-justify">
+                  With A Slow Yet Sustainablerate , Brand Cafebeats Is Growing Well . All The 16 Outlets Are Operational And Are The Most Liked Outlets In The Locality. As Per The Vision 2030, Cafe Beats Is Planning To Reach 100 Outlets Across all over India With Upcoming Outlets Of Surat , Anand, Ahmedabad, Daman, Navsari,
                   And Many More . Strong Business Support , Visionary Ownership And Collective Strategy Is Helping The Brand To Satisfy The Brand Promise And Customer Expectations. With The Lowest Investment In The Industry, Cafebeats Ensures Highroi
                   And Sustainable Growth.
 

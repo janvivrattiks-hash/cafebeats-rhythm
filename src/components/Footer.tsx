@@ -15,7 +15,7 @@ const Footer = () => {
               Where Coffee Meets Rhythm. Premium café experience with handcrafted beverages and delicious food.
             </p>
             <div className="mt-6 flex gap-4">
-              <a href="https://www.facebook.com/cafebeats.restaurant" target="_blank" rel="noopener noreferrer" className="rounded-full border-white/20 border p-2.5 transition-all hover:border-accent hover:bg-accent/10">
+              <a href="https://www.facebook.com/share/18Tnmm6ycu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="rounded-full border-white/20 border p-2.5 transition-all hover:border-accent hover:bg-accent/10">
                 <Facebook className="h-4 w-4" />
               </a>
               <a href="https://www.instagram.com/cafebeats.india/profilecard/?igsh=MW54dGJldTJscWhsOQ" target="_blank" rel="noopener noreferrer" className="rounded-full border-white/20 border p-2.5 transition-all hover:border-accent hover:bg-accent/10">
@@ -46,7 +46,7 @@ const Footer = () => {
             <h4 className="mb-4 font-display text-lg font-semibold">Contact Us</h4>
             <div className="space-y-3 text-sm text-white/70">
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> 
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 <div>
                   ICON RIO<br />
                   707- 7 th floor<br />
@@ -56,11 +56,11 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-accent" /> 
+                <Phone className="h-4 w-4 shrink-0 text-accent" />
                 <a href="tel:+919924574894" className="transition-colors hover:text-accent">+91 99245 74894</a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 shrink-0 text-accent" /> 
+                <Mail className="h-4 w-4 shrink-0 text-accent" />
                 <a href="mailto:Cafebeats2018@gmail.com" className="transition-colors hover:text-accent">Cafebeats2018@gmail.com</a>
               </div>
             </div>

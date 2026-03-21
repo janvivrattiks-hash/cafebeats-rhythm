@@ -8,10 +8,10 @@ import hero2 from "@/assets/hero-2.webp";
 import hero3 from "@/assets/hero-3.webp";
 
 const blogPosts = [
-  { 
-    id: "perfect-espresso", 
-    image: hero1, 
-    title: "The Art of Perfect Espresso", 
+  {
+    id: "perfect-espresso",
+    image: hero1,
+    title: "The Art of Perfect Espresso",
     desc: "Crafting the perfect shot of espresso is an art form that requires precision, passion, and the right technique. Beyond just a caffeine kick, a well-made espresso is a symphony of flavors.",
     content: `
       An espresso is more than just a quick caffeine fix; it is the heart and soul of many coffee-based drinks. To pull the perfect shot, one must understand the balance of four key variables: the grind, the dose, the tamp, and the brew time. 
@@ -24,10 +24,10 @@ const blogPosts = [
     author: "Rohan Sharma",
     readTime: "5 min read"
   },
-  { 
-    id: "milestone-50", 
-    image: hero2, 
-    title: "CafeBeats Opens 50th Store", 
+  {
+    id: "milestone-50",
+    image: hero2,
+    title: "CafeBeats Opens 50th Store",
     desc: "We're absolutely thrilled to celebrate a major milestone in our journey—the opening of our 50th store! This achievement wouldn't have been possible without our amazing community.",
     content: `
       From a single, cozy corner in Surat to 50 locations across India, the CafeBeats rhythm has spread far and wide. Our 50th store, located in the heart of Surat, represents everything we stand for: premium quality, modern design, and a place where music and coffee come together.
@@ -40,10 +40,10 @@ const blogPosts = [
     author: "Ananya Iyer",
     readTime: "4 min read"
   },
-  { 
-    id: "seasonal-menu", 
-    image: hero3, 
-    title: "New Seasonal Menu Launch", 
+  {
+    id: "seasonal-menu",
+    image: hero3,
+    title: "New Seasonal Menu Launch",
     desc: "Spring is in the air, and so are the refreshing flavors of our new seasonal menu. From floral-infused lattes to zesty iced teas, there's a new favorite waiting for everyone.",
     content: `
       As the seasons change, so does our inspiration. This spring, we're bringing the garden to your cup. Our new limited-edition menu features innovative flavors that are both refreshing and sophisticated.
@@ -80,7 +80,7 @@ const BlogDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-24 pb-20">
         <article>
           {/* Header */}
@@ -93,16 +93,16 @@ const BlogDetailPage = () => {
               <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent mb-8 transition-colors">
                 <ArrowLeft className="h-4 w-4" /> Back to Home
               </Link>
-              
+
               <div className="flex gap-2 mb-4">
                 <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider">Lifestyle</span>
                 <span className="px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full uppercase tracking-wider">Coffee</span>
               </div>
-              
+
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-8">
                 {post.title}
               </h1>
-              
+
               <div className="flex flex-wrap items-center gap-6 py-6 border-y border-border mb-10">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-accent flex items-center justify-center text-white font-bold">
@@ -113,23 +113,23 @@ const BlogDetailPage = () => {
                     <p className="text-xs text-muted-foreground">Author</p>
                   </div>
                 </div>
-                
+
                 <div className="h-8 w-px bg-border hidden md:block" />
-                
+
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Clock className="h-4 w-4" />
                   <span className="text-sm">{post.readTime}</span>
                 </div>
-                
+
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <User className="h-4 w-4" />
                   <span className="text-sm">{post.date}</span>
                 </div>
-                
+
                 <div className="ml-auto flex items-center gap-3">
                   <span className="text-sm font-medium text-muted-foreground">Share:</span>
                   <div className="flex gap-2">
-                    <a href="https://www.facebook.com/cafebeats.restaurant" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:text-white transition-all">
+                    <a href="https://www.facebook.com/share/18Tnmm6ycu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:text-white transition-all">
                       <Facebook className="h-4 w-4" />
                     </a>
                     <a href="https://www.instagram.com/cafebeats.india/profilecard/?igsh=MW54dGJldTJscWhsOQ" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:text-white transition-all">
@@ -142,7 +142,7 @@ const BlogDetailPage = () => {
           </div>
 
           {/* Featured Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="container mx-auto px-4 md:px-8 mb-16"
@@ -159,13 +159,13 @@ const BlogDetailPage = () => {
                 <p className="text-xl md:text-2xl font-display font-medium leading-relaxed italic text-foreground/80 mb-10 border-l-4 border-accent pl-8">
                   {post.desc}
                 </p>
-                
+
                 <div className="text-lg leading-relaxed text-muted-foreground space-y-6">
                   {post.content.split('\n\n').map((paragraph, i) => (
                     <p key={i}>{paragraph.trim()}</p>
                   ))}
                 </div>
-                
+
                 <div className="mt-16 p-8 bg-muted rounded-3xl border border-border flex flex-col md:flex-row items-center gap-8">
                   <div className="w-24 h-24 rounded-2xl bg-gradient-premium flex items-center justify-center text-white shrink-0">
                     <Share2 className="h-10 w-10 text-white" />
@@ -174,9 +174,9 @@ const BlogDetailPage = () => {
                     <h4 className="text-xl font-bold mb-2">Subscribe to our Newsletter</h4>
                     <p className="text-muted-foreground mb-4">Get the latest CafeBeats rhythm straight to your inbox.</p>
                     <div className="flex gap-2">
-                      <input 
-                        type="email" 
-                        placeholder="Your email address" 
+                      <input
+                        type="email"
+                        placeholder="Your email address"
                         className="flex-1 px-4 py-2 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent"
                       />
                       <button className="bg-accent px-6 py-2 rounded-xl text-white font-bold hover:brightness-110 transition-all">

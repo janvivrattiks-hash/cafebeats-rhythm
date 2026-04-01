@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import { Toaster } from "./components/ui/toaster.tsx";
 import { TooltipProvider } from "./components/ui/tooltip.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import WhatsAppButton from "./components/WhatsAppButton.tsx";
 
 
 const Index = lazy(() => import("./pages/Index.tsx"));
@@ -25,6 +26,7 @@ const App = () => (
       <BrowserRouter>
 
         <ScrollToTop />
+        <WhatsAppButton />
         <Suspense fallback={<div className="min-h-screen bg-background" />}>
           <Routes>
             <Route path="/" element={<Index />} />

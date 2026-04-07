@@ -1,12 +1,27 @@
 {
-    "rewrites": [
+  "rewrites": [
+    {
+      "source": "/menu/(.*)",
+      "destination": "/menu/$1.pdf"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/menu/(.*).pdf",
+      "headers": [
         {
-            "source": "/menu/cafebeates-dumas",
-            "destination": "/menu/cafebeates-dumas.pdf"
+          "key": "Content-Type",
+          "value": "application/pdf"
         },
         {
-            "source": "/menu/cafebeates-rajkot",
-            "destination": "/menu/cafebeats-Rajkot.pdf"
+          "key": "Content-Disposition",
+          "value": "inline"
         }
-    ]
+      ]
+    }
+  ]
 }

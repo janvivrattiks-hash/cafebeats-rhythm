@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, ViteDevServer } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
@@ -18,7 +18,20 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  plugins: [react()].filter(Boolean),
+  plugins: [
+    react(),
+    {
+      name: "pdf-rewrite",
+      configureServer(server: ViteDevServer) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url === "/menu/cafebeates-dumas") {
+            req.url = "/menu/cafebeates-dumas.pdf";
+          }
+          next();
+        });
+      },
+    },
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

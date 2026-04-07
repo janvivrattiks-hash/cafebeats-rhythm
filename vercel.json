@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/menu/cafebeates-dumas",
-            "destination": "/pdf/cafebeates-dumas.pdf"
+            "destination": "/menu/cafebeates-dumas.pdf"
         }
     ]
 }

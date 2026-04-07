@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import { Toaster } from "./components/ui/toaster.tsx";
 import { TooltipProvider } from "./components/ui/tooltip.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import DownloadMenu from "./pages/Downloadmenu.tsx";
 import WhatsAppButton from "./components/WhatsAppButton.tsx";
 
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/stores" element={<StoresPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
+            <Route path="/menu/:slug" element={<DownloadMenu />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

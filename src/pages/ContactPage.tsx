@@ -5,12 +5,67 @@ import Footer from "@/components/Footer";
 import { Loader2, Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from "@/lib/email";
+
 
 
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    subject: "",
+    message: ""
+  });
+
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Handle Submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        formData,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      toast({
+        title: "Success!",
+        description: "Your message has been sent successfully.",
+      });
+
+      // Reset form
+      setFormData({
+        user_name: "",
+        user_email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -124,87 +179,27 @@ const ContactPage = () => {
 
               <form
                 className="space-y-6"
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  setIsSubmitting(true);
-
-                  const formData = new FormData(e.currentTarget);
-                  const templateParams = {
-                    from_name: formData.get('name'),
-                    from_email: formData.get('email'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message'),
-                    to_email: "info@cafebeats.in"
-                  };
-
-                  try {
-                    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-                    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-                    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-                    // Validation to prevent 400 error from placeholder strings
-                    if (!serviceId || serviceId === 'YOUR_SERVICE_ID' ||
-                      !templateId || templateId === 'YOUR_TEMPLATE_ID' ||
-                      !publicKey || publicKey === 'YOUR_PUBLIC_KEY') {
-                      toast({
-                        variant: "destructive",
-                        title: "Configuration Missing",
-                        description: "Please provide valid EmailJS credentials in your .env file.",
-                      });
-                      setIsSubmitting(false);
-                      return;
-                    }
-
-                    // Initialize emailjs with public key
-                    emailjs.init(publicKey);
-
-                    const result = await emailjs.send(
-                      serviceId,
-                      templateId,
-                      templateParams
-                    );
-
-                    if (result.status === 200) {
-                      setIsSuccess(true);
-                      toast({
-                        title: "Message Sent!",
-                        description: "Your message has been received. We'll get back to you soon.",
-                      });
-                      (e.target as HTMLFormElement).reset();
-                    } else {
-                      throw new Error('Failed to send message');
-                    }
-                  } catch (error: any) {
-                    console.error("EmailJS Error:", error);
-                    toast({
-                      variant: "destructive",
-                      title: "Error",
-                      description: error?.text || "Something went wrong. Please try again later.",
-                    });
-                  } finally {
-                    setIsSubmitting(false);
-                  }
-                }}
+                onSubmit={handleSubmit}
               >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Full Name</label>
-                    <input name="name" required placeholder="John Doe" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
+                    <input name="user_name" value={formData.user_name} onChange={handleChange} required placeholder="John Doe" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email Address</label>
-                    <input name="email" type="email" required placeholder="john@example.com" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
+                    <input name="user_email" type="email" value={formData.user_email} onChange={handleChange} required placeholder="john@example.com" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Subject</label>
-                  <input name="subject" required placeholder="How can we help?" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
+                  <input name="subject" value={formData.subject} onChange={handleChange} required placeholder="How can we help?" className="flex h-12 w-full rounded-xl border border-border bg-background/50 px-4 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Message</label>
-                  <textarea name="message" required placeholder="Type your message here..." className="flex min-h-[150px] w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
+                  <textarea name="message" value={formData.message} onChange={handleChange} required placeholder="Type your message here..." className="flex min-h-[150px] w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
 
                 <button

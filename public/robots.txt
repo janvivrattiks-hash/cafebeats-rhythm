@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cafebeats.com/sitemap.xml
+Sitemap: https://cafebeats.in/sitemap.xml

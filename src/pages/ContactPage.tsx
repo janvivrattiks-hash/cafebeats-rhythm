@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
+import { Loader2, Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 
 const ContactPage = () => {
@@ -127,25 +127,44 @@ const ContactPage = () => {
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setIsSubmitting(true);
+
                   const formData = new FormData(e.currentTarget);
-                  const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
+                  const templateParams = {
+                    from_name: formData.get('name'),
+                    from_email: formData.get('email'),
                     subject: formData.get('subject'),
                     message: formData.get('message'),
-                    target_email: "info@cafebeats.n"
+                    to_email: "info@cafebeats.in"
                   };
 
                   try {
-                    const response = await fetch('/webhook/contact', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify(data),
-                    });
+                    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+                    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+                    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-                    if (response.ok) {
+                    // Validation to prevent 400 error from placeholder strings
+                    if (!serviceId || serviceId === 'YOUR_SERVICE_ID' ||
+                      !templateId || templateId === 'YOUR_TEMPLATE_ID' ||
+                      !publicKey || publicKey === 'YOUR_PUBLIC_KEY') {
+                      toast({
+                        variant: "destructive",
+                        title: "Configuration Missing",
+                        description: "Please provide valid EmailJS credentials in your .env file.",
+                      });
+                      setIsSubmitting(false);
+                      return;
+                    }
+
+                    // Initialize emailjs with public key
+                    emailjs.init(publicKey);
+
+                    const result = await emailjs.send(
+                      serviceId,
+                      templateId,
+                      templateParams
+                    );
+
+                    if (result.status === 200) {
                       setIsSuccess(true);
                       toast({
                         title: "Message Sent!",
@@ -155,11 +174,12 @@ const ContactPage = () => {
                     } else {
                       throw new Error('Failed to send message');
                     }
-                  } catch (error) {
+                  } catch (error: any) {
+                    console.error("EmailJS Error:", error);
                     toast({
                       variant: "destructive",
                       title: "Error",
-                      description: "Something went wrong. Please try again later.",
+                      description: error?.text || "Something went wrong. Please try again later.",
                     });
                   } finally {
                     setIsSubmitting(false);

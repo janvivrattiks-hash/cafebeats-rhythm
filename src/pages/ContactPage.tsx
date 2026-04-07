@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 
 
 const ContactPage = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -118,23 +124,46 @@ const ContactPage = () => {
 
               <form
                 className="space-y-6"
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
+                  setIsSubmitting(true);
                   const formData = new FormData(e.currentTarget);
-                  const name = formData.get('name');
-                  const email = formData.get('email');
-                  const subject = formData.get('subject');
-                  const message = formData.get('message');
+                  const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message'),
+                    target_email: "info@cafebeats.n"
+                  };
 
-                  const whatsappMessage = encodeURIComponent(
-                    `*New Contact Inquiry*\n\n` +
-                    `*Name:* ${name}\n` +
-                    `*Email:* ${email}\n` +
-                    `*Subject:* ${subject}\n` +
-                    `*Message:* ${message}`
-                  );
+                  try {
+                    const response = await fetch('/webhook/contact', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(data),
+                    });
 
-                  window.open(`https://wa.me/919924574894?text=${whatsappMessage}`, '_blank');
+                    if (response.ok) {
+                      setIsSuccess(true);
+                      toast({
+                        title: "Message Sent!",
+                        description: "Your message has been received. We'll get back to you soon.",
+                      });
+                      (e.target as HTMLFormElement).reset();
+                    } else {
+                      throw new Error('Failed to send message');
+                    }
+                  } catch (error) {
+                    toast({
+                      variant: "destructive",
+                      title: "Error",
+                      description: "Something went wrong. Please try again later.",
+                    });
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               >
                 <div className="grid md:grid-cols-2 gap-6">
@@ -158,9 +187,22 @@ const ContactPage = () => {
                   <textarea name="message" required placeholder="Type your message here..." className="flex min-h-[150px] w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all">
-                  Send Message
-                  <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center justify-center w-full bg-gradient-premium hover:shadow-lg text-white font-bold py-6 rounded-2xl group transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      Sending...
+                      <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>

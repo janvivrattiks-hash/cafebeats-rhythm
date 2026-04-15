@@ -4,8 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Loader2, Mail, Phone, MapPin, Send, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from "@/lib/email";
 
 
 
@@ -36,12 +34,13 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        formData,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Failed to send');
 
       toast({
         title: "Success!",
@@ -56,7 +55,7 @@ const ContactPage = () => {
         message: ""
       });
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Submit Error:", error);
       toast({
         variant: "destructive",
         title: "Error",

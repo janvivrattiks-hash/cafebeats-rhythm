@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/menu/(.*)",
-      "destination": "/menu/$1.pdf"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/menu/(.*)",
+      "destination": "/menu/$1.pdf"
     }
   ],
   "headers": [
